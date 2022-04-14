@@ -3,7 +3,6 @@
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S base-devel git wget --needed --noconfirm
-sudo pacman -S git --noconfirm
 
 #Installing Paru
 git clone https://aur.archlinux.org/paru.git
