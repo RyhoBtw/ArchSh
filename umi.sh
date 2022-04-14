@@ -16,9 +16,8 @@ paru -S xorg awesome --noconfirm
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome/
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
-cd ..
-cd ..
-clear
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/autorun.sh
+chmod +x autorun.sh
 
 
 
