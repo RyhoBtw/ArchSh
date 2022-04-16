@@ -10,13 +10,11 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 
-# Installing Awesome
-paru -S awesome --noconfirm
-mkdir -p ~/.config/awesome/
-cd ~/.config/awesome/
-wget https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/autorun.sh
-#chmod +x autorun.sh
+# Awesome config
+#mkdir -p ~/.config/awesome/
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua -p ~/.config/awesome/
+
+# Installing Lightdm
 
 
 
