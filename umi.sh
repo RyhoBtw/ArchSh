@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~
+
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S base-devel git wget --needed --noconfirm
@@ -40,3 +42,10 @@ cd ~
 
 
 #paru -S vim pipewire alacritty --noconfirm
+
+
+
+
+# removing the script
+cd ~
+rm umi.sh
