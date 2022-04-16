@@ -8,7 +8,7 @@ sudo pacman -S base-devel git wget --needed --noconfirm
 sudo pacman -S dash --noconfirm
 sudo ln -sfT /bin/dash /bin/sh
 cd /usr/share/libalpm/hooks/
-wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook
+sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook
 cd ~
 
 
