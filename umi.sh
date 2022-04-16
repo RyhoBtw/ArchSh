@@ -31,8 +31,9 @@ cd ~
 
 # Installing Lightdm
 
-echo ""
-readlink /bin/sh
+
+
+#readlink /bin/sh
 
 
 
