@@ -4,11 +4,22 @@ sudo pacman -Syu --noconfirm
 
 sudo pacman -S base-devel git wget --needed --noconfirm
 
+# Installing dash
+sudo pacman -S dash --noconfirm
+sudo ln -sfT /bin/dash /bin/sh
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook -p /usr/share/libalpm/hooks/
+
+
+# Bash config
+#rm ~/.bashrc
+#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.bashrc
+
+
 # Installing Paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ..
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ..
 
 # Awesome config
 mkdir -p ~/.config/awesome/
