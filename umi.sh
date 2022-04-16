@@ -11,7 +11,7 @@ makepkg -si --noconfirm
 cd ..
 
 # Awesome config
-#mkdir -p ~/.config/awesome/
+mkdir -p ~/.config/awesome/
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua -p ~/.config/awesome/
 
 # Installing Lightdm
