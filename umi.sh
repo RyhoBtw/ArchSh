@@ -7,7 +7,9 @@ sudo pacman -S base-devel git wget --needed --noconfirm
 # Installing dash
 sudo pacman -S dash --noconfirm
 sudo ln -sfT /bin/dash /bin/sh
-wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook -p /usr/share/libalpm/hooks/
+cd /usr/share/libalpm/hooks/
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook
+cd ~
 
 
 # Bash config
