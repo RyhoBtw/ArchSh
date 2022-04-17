@@ -4,7 +4,8 @@ cd ~
 
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S base-devel git wget --needed --noconfirm
+sudo pacman -S base-devel git --needed --noconfirm
+sudo pacman -S wget neovim --noconfirm
 
 # Installing dash
 sudo pacman -S dash --noconfirm
@@ -13,17 +14,8 @@ cd /usr/share/libalpm/hooks/
 sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook
 cd ~
 
+# Installing zsh
 
-# Bash config
-#rm ~/.bashrc
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.bashrc
-
-
-# Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ..
 
 # Awesome config
 mkdir -p ~/.config/awesome/
@@ -34,17 +26,11 @@ cd ~
 # Installing Lightdm
 
 
-
-#readlink /bin/sh
-
-
-
-
-
-#paru -S vim pipewire alacritty --noconfirm
-
-
-
+# Installing Paru
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
 
 # removing the script
 cd ~
