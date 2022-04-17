@@ -15,7 +15,7 @@ sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.ho
 cd ~
 
 # Installing zsh
-
+sudo pacman -S zsh --noconfirm
 
 # Awesome config
 mkdir -p ~/.config/awesome/
@@ -27,10 +27,13 @@ cd ~
 
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
+
+# removing unnecessary packages
+sudo pacman -R xterm --noconfirm
 
 # removing the script
 cd ~
