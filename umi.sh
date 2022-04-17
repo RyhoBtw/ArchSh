@@ -5,7 +5,10 @@ cd ~
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S base-devel git --needed --noconfirm
-sudo pacman -S wget neovim --noconfirm
+sudo pacman -S wget neovim man fzf --noconfirm
+
+# xprofile
+#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.xprofile
 
 # Installing dash
 sudo pacman -S dash --noconfirm
