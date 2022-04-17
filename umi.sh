@@ -16,6 +16,11 @@ cd ~
 
 # Installing zsh
 sudo pacman -S zsh --noconfirm
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zprofile
+mkdir -p ~/.config/zsh/
+cd ~/.config/zsh/
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
+cd ~
 
 # Alacritty config
 mkdir -p ~/.config/alacritty/
