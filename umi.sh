@@ -17,6 +17,12 @@ cd ~
 # Installing zsh
 sudo pacman -S zsh --noconfirm
 
+# Alacritty config
+#mkdir ~/.config/alacritty/
+#cd ~/.config/alacritty/
+#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
+#cd ~
+
 # Awesome config
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
@@ -27,10 +33,10 @@ cd ~
 
 
 # Installing Paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ~
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
 
 # removing unnecessary packages
 sudo pacman -R xterm --noconfirm
