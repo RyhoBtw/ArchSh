@@ -19,7 +19,7 @@ cd ~
 
 # Installing zsh
 sudo pacman -S zsh --noconfirm
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zprofile
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
