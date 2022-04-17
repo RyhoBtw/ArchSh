@@ -8,7 +8,7 @@ sudo pacman -S base-devel git --needed --noconfirm
 sudo pacman -S wget neovim man fzf --noconfirm
 
 # xprofile
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.xprofile
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.xprofile
 
 # Installing dash
 sudo pacman -S dash --noconfirm
@@ -19,7 +19,7 @@ cd ~
 
 # Installing zsh
 sudo pacman -S zsh --noconfirm
-wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zprofile
+#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zprofile
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh/
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
