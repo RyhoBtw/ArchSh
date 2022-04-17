@@ -33,10 +33,10 @@ cd ~
 
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # removing unnecessary packages
 sudo pacman -R xterm --noconfirm
