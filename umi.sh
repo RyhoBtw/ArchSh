@@ -18,10 +18,10 @@ cd ~
 sudo pacman -S zsh --noconfirm
 
 # Alacritty config
-#mkdir ~/.config/alacritty/
-#cd ~/.config/alacritty/
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
-#cd ~
+mkdir -p ~/.config/alacritty/
+cd ~/.config/alacritty/
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
+cd ~
 
 # Awesome config
 mkdir -p ~/.config/awesome/
