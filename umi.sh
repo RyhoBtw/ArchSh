@@ -46,6 +46,11 @@ cd ~
 #makepkg -si --noconfirm
 #cd ~
 
+# Installing fonts
+paru -S ttf-ms-fonts --noconfirm
+
+
+
 # removing unnecessary packages
 sudo pacman -R xterm --noconfirm
 
