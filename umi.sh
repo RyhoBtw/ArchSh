@@ -41,10 +41,10 @@ cd ~
 
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
