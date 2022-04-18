@@ -51,7 +51,7 @@ cd ~
 #paru -S lf --noconfirm
 
 # Installing fonts
-paru -S ttf-ms-fonts --noconfirm
+#paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-mononok --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
