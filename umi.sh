@@ -26,6 +26,10 @@ cd ~/.config/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
 cd ~
 
+# aliases
+cd ~/.config
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
+
 # Alacritty config
 mkdir -p ~/.config/alacritty/
 cd ~/.config/alacritty/
