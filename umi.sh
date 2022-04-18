@@ -18,7 +18,7 @@ sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.ho
 cd ~
 
 # Installing zsh
-sudo pacman -S zsh --noconfirm
+sudo pacman -S zsh zsh-syntax-highlighting --noconfirm
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh
