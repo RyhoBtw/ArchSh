@@ -19,6 +19,7 @@ cd ~
 
 # Installing zsh
 sudo pacman -S zsh zsh-syntax-highlighting --noconfirm
+mkdir -p ~/.cache/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh
@@ -45,6 +46,9 @@ cd ~
 #cd paru
 #makepkg -si --noconfirm
 #cd ~
+
+# Installing packages
+#paru -S lf --noconfirm
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
