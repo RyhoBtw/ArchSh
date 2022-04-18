@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#curl -LO https://raw.githubusercontent.com/Prihler/umi/main/umi.sh
+#chmod +x umi.sh
+#./umi.sh
+
 cd ~
 
 sudo pacman -Syu --noconfirm
