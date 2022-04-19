@@ -8,7 +8,7 @@ cd ~
 
 
 
-paru -S zsh-theme-powerlevel10k-git --noconfirm
+
 
 
 
@@ -34,12 +34,13 @@ sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.ho
 cd ~
 
 # Installing zsh
-paru -S zsh zsh-syntax-highlighting --noconfirm
+paru -S zsh zsh-syntax-highlighting zsh-theme-powerlevel10k-git --noconfirm
 mkdir -p ~/.cache/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.p10k.zsh
 cd ~
 
 # aliases
