@@ -41,19 +41,10 @@ wget https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
 # Alacritty config & Picom
 sudo pacman -S picom --noconfirm
-#mkdir -p ~/.config/alacritty/
-#cd ~/.config/alacritty/
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
-#cd ~
-
-
-
-
-#Installing Kitty
-
-
-
-
+mkdir -p ~/.config/alacritty/
+cd ~/.config/alacritty/
+wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
+cd ~
 
 
 # Awesome config
