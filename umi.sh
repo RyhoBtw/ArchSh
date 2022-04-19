@@ -6,6 +6,13 @@
 
 cd ~
 
+
+
+paru -S zsh-theme-powerlevel10k-git --noconfirm
+
+
+
+
 # Updating system
 sudo pacman -Syu --noconfirm
 
