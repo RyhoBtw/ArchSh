@@ -26,6 +26,9 @@ sudo pacman -S wget --noconfirm
 #makepkg -si --noconfirm
 #cd ~
 
+# changing bash-files location
+mkdir -p ~/.config/bash/
+
 # Installing dash
 sudo pacman -S dash --noconfirm
 sudo ln -sfT /bin/dash /bin/sh
