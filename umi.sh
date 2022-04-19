@@ -87,3 +87,8 @@ paru -S lf neovim man fzf --noconfirm
 # removing the script
 cd ~
 rm umi.sh
+
+
+
+
+startx
