@@ -6,6 +6,7 @@
 
 cd ~
 
+
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S base-devel git --needed --noconfirm
