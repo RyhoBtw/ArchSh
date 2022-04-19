@@ -27,7 +27,7 @@ sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.ho
 cd ~
 
 # Installing zsh
-paru -S zsh zsh-syntax-highlighting zsh-theme-powerlevel10k-git --noconfirm
+paru -S zsh zsh-syntax-highlighting --noconfirm
 mkdir -p ~/.cache/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
