@@ -27,6 +27,11 @@ sudo pacman -S wget --noconfirm
 #cd ~
 
 # changing bash-files location
+export HISTFILE="$HOME/.config/bash"
+#rm ~/.bash_history
+#rm ~/.bash_logout
+#rm ~/.bash_profile
+#rm ~/.bashrc
 mkdir -p ~/.config/bash/
 
 # Installing dash
