@@ -41,15 +41,18 @@ wget https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
 # Alacritty config & Picom
 sudo pacman -S picom --noconfirm
-mkdir -p ~/.config/alacritty/
-cd ~/.config/alacritty/
-wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
-cd ~
+#mkdir -p ~/.config/alacritty/
+#cd ~/.config/alacritty/
+#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
+#cd ~
 
-#git clone https://github.com/zenixls2/alacritty
-#cd alacritty
-#git checkout ligature
-#cargo build --release
+
+
+
+#Installing Kitty
+
+
+
 
 
 
