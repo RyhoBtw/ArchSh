@@ -7,12 +7,6 @@
 cd ~
 
 
-
-
-
-
-
-
 # Updating system
 sudo pacman -Syu --noconfirm
 
