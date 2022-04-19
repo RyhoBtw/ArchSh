@@ -6,14 +6,18 @@
 
 cd ~
 
-
+# Updating system
 sudo pacman -Syu --noconfirm
 
+# Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
-sudo pacman -S wget neovim man fzf --noconfirm
+sudo pacman -S wget --noconfirm
 
-# xprofile
-#wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.xprofile
+# Installing Paru
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
 
 # Installing dash
 sudo pacman -S dash --noconfirm
@@ -23,7 +27,7 @@ sudo wget https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.ho
 cd ~
 
 # Installing zsh
-sudo pacman -S zsh zsh-syntax-highlighting --noconfirm
+paru -S zsh zsh-syntax-highlighting zsh-theme-powerlevel10k-git --noconfirm
 mkdir -p ~/.cache/zsh
 wget https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
@@ -58,22 +62,17 @@ cd ~
 # Installing Lightdm
 
 
-# Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
-
-# Installing packages
-#paru -S lf --noconfirm
 
 # Installing fonts
 #paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-mononok --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
-# removing unnecessary packages
+# removing unwanted packages
 sudo pacman -R xterm --noconfirm
+
+# Installing packages
+paru -S lf neovim man fzf --noconfirm
 
 # removing the script
 cd ~
