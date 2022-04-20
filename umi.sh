@@ -12,13 +12,17 @@ sudo pacman -Syu --noconfirm
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
-#sudo pacman -S wget --noconfirm
+sudo pacman -S xdg-user-dirs --noconfirm
 
 # Installing Paru
 #git clone https://aur.archlinux.org/paru.git
 #cd paru
 #makepkg -si --noconfirm
 #cd ~
+
+# xdg-user-dirs
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
+xdg-user-dirs-update
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
