@@ -25,7 +25,6 @@ mkdir -p ~/.config/user-dirs
 cd ~/.config/user-dirs
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
-xdg-user-dirs-update
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
