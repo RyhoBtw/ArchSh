@@ -22,6 +22,11 @@ sudo pacman -S base-devel git --needed --noconfirm
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
+mkdir -p ~/.cache/bash/
+mv ~/.bash_history ~/.cache/bash/
+mv ~/.bash_logout ~/.cache/bash/
+mv ~/.bash_profile ~/.config/bash/
+mv ~/.bashrc ~/.config/bash/
 
 # Installing dash
 sudo pacman -S dash --noconfirm
@@ -39,6 +44,7 @@ cd ~/.config/zsh
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.p10k.zsh
 cd ~
+
 
 # aliases
 cd ~/.config
@@ -72,6 +78,7 @@ paru -R xterm --noconfirm
 
 # Installing packages
 paru -S lf neovim man fzf --noconfirm
+
 
 # removing the script
 cd ~
