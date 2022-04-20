@@ -21,7 +21,8 @@ sudo pacman -S xdg-user-dirs --noconfirm
 #cd ~
 
 # xdg-user-dirs
-cd ~/.config
+mkdir -p ~/.config/user-dirs
+cd ~/.config/user-dirs
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
 xdg-user-dirs-update
