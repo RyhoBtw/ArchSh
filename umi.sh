@@ -21,9 +21,10 @@ sudo pacman -S xdg-user-dirs --noconfirm
 #cd ~
 
 # xdg-user-dirs
-cd ~/.config
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
-cd ~
+#cd ~/.config
+#curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
+#cd ~
+xdg-user-dirs-update
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
