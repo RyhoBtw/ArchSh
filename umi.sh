@@ -10,8 +10,8 @@ cd ~
 # Updating system
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S xdg-user-dirs --noconfirm
-xdg-user-dirs-update
+#sudo pacman -S xdg-user-dirs --noconfirm
+#xdg-user-dirs-update
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
