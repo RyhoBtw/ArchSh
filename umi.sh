@@ -21,7 +21,9 @@ sudo pacman -S xdg-user-dirs --noconfirm
 #cd ~
 
 # xdg-user-dirs
+cd ~/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
+cd ~
 xdg-user-dirs-update
 
 # changing bash-files location
@@ -86,7 +88,7 @@ paru -S lf neovim man fzf --noconfirm
 
 # removing the script
 cd ~
-#rm umi.sh
+rm umi.sh
 
 
 
