@@ -18,7 +18,10 @@ cd ~
 xdg-user-dirs-update
 
 #downloading xinitrc
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.xinitrc
+mkdir ~/.config/autostart
+cd ~/.config/autostart
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/display-settings
+cd ~
 
 # downloading startup script
 sudo mkdir /etc/init.d
