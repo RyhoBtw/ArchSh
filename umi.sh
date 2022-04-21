@@ -73,6 +73,9 @@ rm ~/.config/awesome/rc.lua   #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
 cd ~
 
+# Wallpaper
+paru -S nitrogen gnome-backgrounds mate-backgrounds deepin-wallpapers elementary-wallpapers plasma-workspace-wallpapers
+
 # Installing Lightdm
 
 
