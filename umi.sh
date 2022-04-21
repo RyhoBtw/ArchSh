@@ -78,7 +78,7 @@ cd ~
 # Awesome config
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
-rm ~/.config/awesome/rc.lua   #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.lua
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
 cd ~
 
