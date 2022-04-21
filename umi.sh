@@ -74,7 +74,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
 cd ~
 
 # Wallpaper
-paru -S nitrogen gnome-backgrounds mate-backgrounds deepin-wallpapers elementary-wallpapers plasma-workspace-wallpapers
+paru -S nitrogen gnome-backgrounds mate-backgrounds deepin-wallpapers elementary-wallpapers plasma-workspace-wallpapers --noconfirm
 
 # Installing Lightdm
 
