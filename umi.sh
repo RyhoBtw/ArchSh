@@ -74,6 +74,12 @@ cd ~
 
 # Wallpaper
 paru -S nitrogen --noconfirm
+sudo mkdir /usr/share/wallpaper
+cd /usr/share/wallpaper
+sudo curl -LO https://i.reddit.it/6se14k41od671.png
+sudo mv 6se14k41od671.png doge.png
+sudo nitrogen --set-audio doge.png
+cd  ~
 
 # Installing Lightdm
 
@@ -88,6 +94,7 @@ paru -S nerd-fonts-jetbrains-mono --noconfirm
 paru -R xterm --noconfirm
 
 # Installing packages
+paru -S firefox --needed --noconfirm
 paru -S lf neovim man fzf --noconfirm
 
 
