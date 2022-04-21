@@ -19,7 +19,10 @@ xdg-user-dirs-update
 
 # downloading startup script
 sudo mkdir /etc/init.d
+cd /etc/init.d
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/start.sh
+sudo chmod +x start.sh
+cd ~
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
