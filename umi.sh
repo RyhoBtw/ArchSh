@@ -28,10 +28,10 @@ cd ~
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
