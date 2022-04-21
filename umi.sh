@@ -88,7 +88,6 @@ mkdir ~/Pictures/wallpaper
 cd ~/Pictures/wallpaper
 curl -LO https://i.redd.it/6se14k41od671.png
 mv 6se14k41od671.png doge.png
-#sudo nitrogen --set-auto doge.png
 cd  ~
 
 # Installing ly
