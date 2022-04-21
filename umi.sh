@@ -17,6 +17,9 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
 xdg-user-dirs-update
 
+#downloading xinitrc
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.xinitrc
+
 # downloading startup script
 sudo mkdir /etc/init.d
 cd /etc/init.d
