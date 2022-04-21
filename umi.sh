@@ -76,7 +76,7 @@ cd ~
 paru -S nitrogen --noconfirm
 sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
-sudo curl -LO https://i.reddit.it/6se14k41od671.png
+sudo curl -LO https://i.redd.it/6se14k41od671.png
 sudo mv 6se14k41od671.png doge.png
 sudo nitrogen --set-audio doge.png
 cd  ~
