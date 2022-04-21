@@ -6,7 +6,6 @@
 
 cd ~
 
-
 # Updating system
 sudo pacman -Syu --noconfirm
 
@@ -17,8 +16,13 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
 xdg-user-dirs-update
 
-#downloading xprofile
+#downloading xprofile & autostart files
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.xprofile
+mkdir -p ~/.config/start
+cd ~/.config/start
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper.sh
+chmod +x wallpaper.sh
+cd ~
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
