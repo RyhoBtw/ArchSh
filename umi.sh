@@ -17,6 +17,9 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
 xdg-user-dirs-update
 
+# downloading .Xresources
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.Xresources
+
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
@@ -78,7 +81,7 @@ sudo mkdir /usr/share/wallpaper
 cd /usr/share/wallpaper
 sudo curl -LO https://i.redd.it/6se14k41od671.png
 sudo mv 6se14k41od671.png doge.png
-sudo nitrogen --set-auto doge.png
+#sudo nitrogen --set-auto doge.png
 cd  ~
 
 # Installing ly
