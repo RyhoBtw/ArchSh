@@ -81,9 +81,8 @@ sudo mv 6se14k41od671.png doge.png
 sudo nitrogen --set-auto doge.png
 cd  ~
 
-# Installing Lightdm
-
-
+# Installing ly
+paru -S ly --noconfirm
 
 # Installing fonts
 #paru -S ttf-ms-fonts --noconfirm
@@ -104,4 +103,4 @@ rm umi.sh
 
 
 
-startx
+reboot
