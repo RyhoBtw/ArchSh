@@ -83,6 +83,8 @@ cd  ~
 
 # Installing ly
 paru -S ly --noconfirm
+sudo systemctl enable ly.service
+sudo systemctl start ly.service
 
 # Installing fonts
 #paru -S ttf-ms-fonts --noconfirm
