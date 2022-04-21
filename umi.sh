@@ -84,7 +84,6 @@ cd  ~
 # Installing ly
 paru -S ly --noconfirm
 sudo systemctl enable ly.service
-sudo systemctl start ly.service
 
 # Installing fonts
 #paru -S ttf-ms-fonts --noconfirm
@@ -103,6 +102,5 @@ paru -S lf neovim man fzf --noconfirm
 cd ~
 rm umi.sh
 
-
-
-reboot
+# starting ly
+sudo systemctl start ly.service
