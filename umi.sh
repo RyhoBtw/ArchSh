@@ -97,11 +97,11 @@ paru -S nerd-fonts-mononok --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
 # removing unwanted packages
-paru -R xterm --noconfirm
+paru -R xterm htop --noconfirm
 
 # Installing packages
 paru -S firefox --needed --noconfirm
-paru -S lf neovim man fzf atom --noconfirm
+paru -S lf neovim man fzf atom btop --noconfirm
 
 
 # removing the script
