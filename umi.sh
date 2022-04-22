@@ -101,7 +101,7 @@ paru -R xterm htop --noconfirm
 
 # Installing packages
 paru -S firefox --needed --noconfirm
-paru -S lf neovim man fzf atom btop --noconfirm
+paru -S ranger neovim man fzf atom btop --noconfirm
 
 
 # removing the script
