@@ -76,6 +76,9 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.lua
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
 cd ~
 
+# rofi
+paru -S rofi --noconfirm
+
 # Wallpaper
 paru -S nitrogen --noconfirm
 mkdir ~/Pictures/wallpaper
@@ -98,7 +101,7 @@ paru -R xterm --noconfirm
 
 # Installing packages
 paru -S firefox --needed --noconfirm
-paru -S lf neovim man fzf --noconfirm
+paru -S lf neovim man fzf atom --noconfirm
 
 
 # removing the script
