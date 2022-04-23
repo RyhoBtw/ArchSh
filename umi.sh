@@ -80,6 +80,12 @@ cd ~/Pictures/wallpaper
 curl -LO https://i.redd.it/6se14k41od671.png
 mv 6se14k41od671.png doge.png
 cd  ~
+# Temporary ---------------------------------------------------------------------------!
+mkdir ~/.config/nitrogen
+cd ~/.config/nitrogen
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/bg-saved.cfg
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/nitrogen.cfg
+cd ~
 
 # Installing ly
 paru -S ly --noconfirm
