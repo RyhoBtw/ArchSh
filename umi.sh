@@ -64,7 +64,7 @@ cd ~
 # Awesome config
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.lua
+#curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.lua
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
 git clone https://github.com/Elv13/collision
 cd ~
