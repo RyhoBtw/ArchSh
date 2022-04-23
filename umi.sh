@@ -15,8 +15,8 @@ cd ~/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
 cd ~
 xdg-user-dirs-update
-rm -f ~/user-dirs.dirs
-rmdir ~/Desktop
+#rm -f ~/user-dirs.dirs
+#rmdir ~/Desktop
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
