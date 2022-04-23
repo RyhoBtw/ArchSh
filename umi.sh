@@ -66,7 +66,9 @@ mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.lua
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
+git clone https://github.com/Elv13/collision
 cd ~
+
 
 # rofi
 paru -S rofi --noconfirm
@@ -78,12 +80,6 @@ cd ~/Pictures/wallpaper
 curl -LO https://i.redd.it/6se14k41od671.png
 mv 6se14k41od671.png doge.png
 cd  ~
-# Temporary ---------------------------------------------------------------------------!
-mkdir ~/.config/nitrogen
-cd ~/.config/nitrogen
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/bg-saved.cfg
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/nitrogen.cfg
-cd ~
 
 # Installing ly
 paru -S ly --noconfirm
