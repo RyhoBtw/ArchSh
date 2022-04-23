@@ -71,6 +71,8 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/mytheme.lua
 git clone https://github.com/Elv13/collision
 cd ~
 
+# Polybar
+paru -S polybar --noconfirm
 
 # rofi
 paru -S rofi --noconfirm
