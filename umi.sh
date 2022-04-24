@@ -86,8 +86,11 @@ cd ~
 paru -S nitrogen --noconfirm
 mkdir ~/Pictures/wallpaper
 cd ~/Pictures/wallpaper
-curl -LO https://i.redd.it/6se14k41od671.png
-mv 6se14k41od671.png doge.png
+#curl -LO https://i.redd.it/6se14k41od671.png
+#curl -LO https://i.redd.it/z0bug4fwyhc51.png
+#mv 6se14k41od671.png doge.png
+#mv z0bug4fwyhc51.png forest-mountain.png
+git clone https://gitlab.com/Prihler/wallpapers.git
 cd  ~
 
 # Installing ly
