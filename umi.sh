@@ -22,10 +22,10 @@ xdg-user-dirs-update
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -72,10 +72,10 @@ git clone https://github.com/Elv13/collision
 cd ~
 
 # Polybar
-paru -S polybar --noconfirm
+
 
 # rofi
-#paru -S rofi --noconfirm
+paru -S rofi --noconfirm
 
 # Wallpaper
 paru -S nitrogen --noconfirm
@@ -90,8 +90,8 @@ paru -S ly --noconfirm
 sudo systemctl enable ly.service
 
 # Installing fonts
-#paru -S ttf-ms-fonts --noconfirm
-#paru -S nerd-fonts-jetbrains-mono --noconfirm
+paru -S ttf-ms-fonts --noconfirm
+paru -S nerd-fonts-jetbrains-mono --noconfirm
 
 # removing unwanted packages
 paru -R xterm htop i3 --noconfirm
