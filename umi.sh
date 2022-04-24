@@ -75,7 +75,7 @@ cd ~
 paru -S polybar --noconfirm
 
 # rofi
-paru -S rofi --noconfirm
+#paru -S rofi --noconfirm
 
 # Wallpaper
 paru -S nitrogen --noconfirm
