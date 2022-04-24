@@ -64,6 +64,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
 cd ~
 
 # Awesome config
+paru -S awesome --noconfirm
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
