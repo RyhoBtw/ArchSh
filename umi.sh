@@ -94,7 +94,7 @@ sudo systemctl enable ly.service
 #paru -S nerd-fonts-jetbrains-mono --noconfirm
 
 # removing unwanted packages
-paru -R xterm htop --noconfirm
+paru -R xterm htop i3 --noconfirm
 
 # Installing packages
 paru -S firefox --needed --noconfirm
