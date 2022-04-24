@@ -76,6 +76,11 @@ cd ~
 
 # rofi
 paru -S rofi --noconfirm
+mkdir ~/.config/rofi
+cd ~/.config/rofi
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/config.rasi
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/power.rasi
+cd ~
 
 # Wallpaper
 paru -S nitrogen --noconfirm
