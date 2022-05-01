@@ -114,4 +114,4 @@ cd ~
 rm umi.sh
 
 # starting ly
-sudo systemctl start ly.service
+#sudo systemctl start ly.service
