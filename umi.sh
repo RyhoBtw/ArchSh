@@ -89,8 +89,11 @@ git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
 # Installing ly
-paru -S ly --noconfirm
-sudo systemctl enable ly.service
+#paru -S ly --noconfirm
+#sudo systemctl enable ly.service
+
+# Installing sddm
+
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
@@ -101,7 +104,7 @@ paru -R xterm htop i3 --noconfirm
 
 # Installing packages
 paru -S firefox --needed --noconfirm
-paru -S ranger neovim man fzf atom btop arandr --noconfirm
+paru -S ranger neovim man fzf atom btop arandr mpv --noconfirm
 
 
 # removing the script
