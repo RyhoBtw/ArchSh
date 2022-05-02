@@ -93,14 +93,14 @@ cd  ~
 #sudo systemctl enable ly.service
 
 # Installing sddm
-paru -S sddm-kcm sddm-sugar-candy-git --noconfirm
+paru -S sddm-kcm --noconfirm
 sudo systemctl enable sddm
 git clone https://github.com/CoolFool/Elegant-sddm.git
 cd Elegant-sddm
 ./install.sh
 #cd /etc/
 #sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
-#cd ~
+#cd ~            sddm-sugar-candy-git 
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
