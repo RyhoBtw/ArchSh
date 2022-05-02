@@ -95,7 +95,7 @@ cd  ~
 # Installing sddm
 paru -S sddm-kcm sddm-sugar-candy-git --noconfirm
 cd /etc/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
 cd ~
 sudo systemctl enable sddm
 
