@@ -96,11 +96,12 @@ cd  ~
 paru -S sddm-kcm --noconfirm
 sudo systemctl enable sddm
 git clone https://github.com/CoolFool/Elegant-sddm.git
+cd /etc/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+cd ~
 cd Elegant-sddm
 ./install.sh
-#cd /etc/
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
-#cd ~            sddm-sugar-candy-git 
+cd ~
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
