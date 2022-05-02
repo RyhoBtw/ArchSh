@@ -93,9 +93,10 @@ cd  ~
 #sudo systemctl enable ly.service
 
 # Installing sddm
-#paru -S sddm-kcm sddm-sugar-candy-git --noconfirm
-#cd /etc/
-#curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+paru -S sddm-kcm sddm-sugar-candy-git --noconfirm
+cd /etc/
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+cd ~
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
