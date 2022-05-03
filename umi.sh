@@ -56,6 +56,11 @@ cd ~
 cd ~/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
+# Monitor setup
+touch ~/.config/monitor-setup.sh
+echo -e 'xrandr --output Virtual-1 --mode 1920x1080' >> ~/.config/monitor-setup.sh
+chmod +x ~/.config/monitor-setup.sh
+
 # Alacritty config & Picom
 sudo pacman -S picom --noconfirm
 mkdir -p ~/.config/alacritty/
@@ -93,7 +98,11 @@ cd  ~
 #sudo systemctl enable ly.service
 
 # Installing LightDM
-#paru -S lightdm-webkit-theme-aether --noconfirm
+paru -S lightdm lightdm-webkit-theme-aether --noconfirm
+sudo systemctl enable lightdm
+cd /etc/lightdm/
+sudo rm /lightdm.conf
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
@@ -103,7 +112,7 @@ paru -S nerd-fonts-jetbrains-mono --noconfirm
 paru -R xterm htop i3 --noconfirm
 
 # Installing packages
-paru -S firefox --needed --noconfirm
+paru -S librewolf-bin libreoffice-fresh --noconfirm
 paru -S ranger neovim man fzf atom btop arandr mpv --noconfirm
 
 
@@ -111,5 +120,5 @@ paru -S ranger neovim man fzf atom btop arandr mpv --noconfirm
 cd ~
 rm umi.sh
 
-# starting ly
-#sudo systemctl start ly.service
+# starting LightDM
+sudo systemctl start lightdm.service
