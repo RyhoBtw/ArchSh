@@ -58,7 +58,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
 # Monitor setup
 touch ~/.config/monitor-setup.sh
-echo -e 'xrandr --output Virtual-1 --mode 1920x1080 &&' >> ~/.config/monitor-setup.sh
+echo -e 'xrandr --output Virtual-1 --mode 1920x1080 &' >> ~/.config/monitor-setup.sh
 chmod +x ~/.config/monitor-setup.sh
 
 # Alacritty config & Picom
@@ -100,8 +100,8 @@ cd  ~
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/lightdm/
-#sudo rm lightdm.conf
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
+sudo rm lightdm.conf
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
 sudo systemctl enable lightdm.service
 
 # Installing fonts
