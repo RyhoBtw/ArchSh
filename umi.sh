@@ -98,11 +98,11 @@ cd  ~
 #sudo systemctl enable ly.service
 
 # Installing LightDM
-paru -S lightdm lightdm-webkit-theme-aether --noconfirm
-sudo systemctl enable lightdm
+paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/lightdm/
 sudo rm /lightdm.conf
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
+sudo systemctl enable lightdm.service
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
