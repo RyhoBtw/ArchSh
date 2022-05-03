@@ -100,8 +100,8 @@ cd  ~
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/lightdm/
-sudo rm /lightdm.conf
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
+#sudo rm /lightdm.conf
+#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
 sudo systemctl enable lightdm.service
 
 # Installing fonts
