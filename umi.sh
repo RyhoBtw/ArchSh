@@ -121,4 +121,4 @@ cd ~
 rm umi.sh
 
 # starting LightDM
-sudo systemctl start lightdm.service
+sudo systemctl start lightdm
