@@ -58,7 +58,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
 # Monitor setup
 touch ~/.config/monitor-setup.sh
-echo -e 'xrandr --output Virtual-1 --mode 1920x1080' >> ~/.config/monitor-setup.sh
+echo -e 'xrandr --output Virtual-1 --mode 1920x1080 &&' >> ~/.config/monitor-setup.sh
 chmod +x ~/.config/monitor-setup.sh
 
 # Alacritty config & Picom
