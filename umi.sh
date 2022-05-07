@@ -4,6 +4,8 @@
 #chmod +x umi.sh
 #./umi.sh
 
+#archinstall --config https://raw.githubusercontent.com/Prihler/dotfiles/main/user_configuration.json
+
 cd ~
 
 # Updating system
