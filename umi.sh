@@ -95,6 +95,9 @@ cd ~/Pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
+# Themes
+paru -S lxappearance --noconfirm
+
 # Installing ly
 #paru -S ly --noconfirm
 #sudo systemctl enable ly.service
