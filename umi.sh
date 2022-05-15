@@ -105,9 +105,9 @@ paru -S qogir-gtk-theme oxygen-cursors --noconfirm
 
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
-cd /etc/lightdm/
-#sudo rm lightdm.conf
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/lightdm.conf
+cd /etc/X11/xorg.conf.d/
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
+cd ~
 sudo systemctl enable lightdm.service
 
 # Installing fonts
