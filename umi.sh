@@ -96,8 +96,8 @@ git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
 # Themes
-paru -S lxappearance --noconfirm
-paru -S qogir-gtk-theme oxygen-cursors --noconfirm
+#paru -S lxappearance --noconfirm
+#paru -S qogir-gtk-theme oxygen-cursors --noconfirm
 
 # Installing ly
 #paru -S ly --noconfirm
@@ -106,7 +106,7 @@ paru -S qogir-gtk-theme oxygen-cursors --noconfirm
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/X11/xorg.conf.d/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
 cd ~
 sudo systemctl enable lightdm.service
 
