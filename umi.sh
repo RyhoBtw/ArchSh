@@ -103,6 +103,11 @@ paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/X11/xorg.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
 cd ~
+# Theming LightDM
+#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
+
+
+
 sudo systemctl enable lightdm.service
 
 # Installing fonts
