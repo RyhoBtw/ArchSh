@@ -89,6 +89,9 @@ paru -S nitrogen --noconfirm
 cd ~/Pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
+nitrogen
+user="$USER"
+sed -i '/dirs=/c\dirs=/home/$user/Pictures/wallpaper;' ~/.config/nitrogen/nitrogen.cfg
 
 # Themes
 #paru -S lxappearance --noconfirm
