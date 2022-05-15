@@ -58,11 +58,6 @@ cd ~
 cd ~/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 
-# Monitor setup
-touch ~/.config/screen-setup.sh
-echo -e 'xrandr --output Virtual-1 --mode 1920x1080 &' >> ~/.config/screen-setup.sh
-chmod +x ~/.config/screen-setup.sh
-
 # Alacritty config & Picom
 sudo pacman -S picom --noconfirm
 mkdir -p ~/.config/alacritty/
