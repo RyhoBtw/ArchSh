@@ -114,7 +114,7 @@ rm ~/pictures-tmp
 sudo systemctl enable lightdm.service
 
 # Installing fonts
-paru -S ttf-ms-fonts --noconfirm
+#paru -S ttf-ms-fonts --noconfirm  #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
 # removing unwanted packages
