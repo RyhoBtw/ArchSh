@@ -111,9 +111,9 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wal
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
 #sudo zsh
 #rm -r /var/lib/lightdm/.local/share/webkitgtk/localstorage
-#cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
+cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
 #zsh
-#rm -r ~/umi-tmp
+rm -r ~/umi-tmp
 
 sudo systemctl enable lightdm.service
 
