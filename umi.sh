@@ -105,13 +105,13 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolut
 cd ~
 # Theming LightDM
 git clone https://gitlab.com/Prihler/umi-tmp.git
-sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/css/style.css
-sudo cp ~/umi-tmp/style.css /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/css/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
-rm ~/umi-tmp
+sudo rm -r /var/lib/lightdm/.local/share/webkitgtk/localstorage
+sudo cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
+rm -r ~/umi-tmp
 
 sudo systemctl enable lightdm.service
 
