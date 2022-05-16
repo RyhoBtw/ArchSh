@@ -105,9 +105,10 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolut
 cd ~
 # Theming LightDM
 git clone https://gitlab.com/Prihler/pictures-tmp.git
-#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
-#sudo cp ~/pictures-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
-#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
+sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
+sudo cp ~/pictures-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
+sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
+sudo cp ~/pictures-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
 rm ~/pictures-tmp
 
 sudo systemctl enable lightdm.service
