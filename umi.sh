@@ -110,7 +110,8 @@ sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
 #rm -r /var/lib/lightdm/.local/share/webkitgtk/localstorage
-#cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
+sudo mkdir /var/lib/lightdm/.local/share/webkitgtk/
+sudo cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
 #rm -r ~/umi-tmp
 
 sudo systemctl enable lightdm.service
