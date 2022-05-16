@@ -104,12 +104,14 @@ cd /etc/X11/xorg.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
 cd ~
 # Theming LightDM
-git clone https://gitlab.com/Prihler/pictures-tmp.git
+git clone https://gitlab.com/Prihler/umi-tmp.git
+sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/css/style.css
+sudo cp ~/umi-tmp/style.css /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/css/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
-sudo cp ~/pictures-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
+sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
-sudo cp ~/pictures-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
-rm ~/pictures-tmp
+sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
+rm ~/umi-tmp
 
 sudo systemctl enable lightdm.service
 
