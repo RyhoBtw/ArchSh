@@ -114,7 +114,6 @@ sudo touch /opt/scripts/aether-theme-setup.sh
 sudo chmod +x /opt/scripts/aether-theme-setup.sh
 cd /opt/scripts/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
-sudo rm -r ~/umi-tmp
 cd ~
 
 sudo systemctl enable lightdm.service
