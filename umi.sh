@@ -112,10 +112,9 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/log
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
-sudo touch /opt/scripts/aether-theme-setup.sh
-sudo chmod +x /opt/scripts/aether-theme-setup.sh
 cd /opt/scripts/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
+sudo chmod +x /opt/scripts/aether-theme-setup.sh
 cd ~
 
 sudo systemctl enable lightdm.service
