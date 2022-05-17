@@ -111,6 +111,10 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wal
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
 #rm -r /var/lib/lightdm/.local/share/webkitgtk/localstorage
 #sudo mkdir /var/lib/lightdm/.local/share/webkitgtk/
+sudo touch /opt/scripts/aether-theme-setup
+sudo chmod +x /opt/scripts/aether-theme-setup
+cd /opt/scripts/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aetger
 #sudo cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
 #rm -r ~/umi-tmp
 
