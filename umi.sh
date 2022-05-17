@@ -20,6 +20,9 @@ xdg-user-dirs-update
 rm -f user-dirs.dirs
 xdg-user-dirs-update
 
+# Creating scripts directory
+sudo mkdir /opt/scripts/
+
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
@@ -109,7 +112,6 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/log
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
-sudo mkdir /opt/scripts/
 sudo touch /opt/scripts/aether-theme-setup.sh
 sudo chmod +x /opt/scripts/aether-theme-setup.sh
 cd /opt/scripts/
