@@ -24,10 +24,10 @@ xdg-user-dirs-update
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ~
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -117,6 +117,7 @@ cd /opt/scripts/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aetger
 #sudo cp -r ~/umi-tmp/localstorage /var/lib/lightdm/.local/share/webkitgtk/
 #rm -r ~/umi-tmp
+cd ~
 
 sudo systemctl enable lightdm.service
 
