@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Updating system
 paru -Syu --noconfirm
 
