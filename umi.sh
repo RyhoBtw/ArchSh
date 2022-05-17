@@ -133,7 +133,7 @@ paru -S ranger neovim man fzf atom btop arandr mpv --noconfirm
 
 # removing the script
 cd ~
-#rm umi.sh
+rm umi.sh
 
 # starting LightDM
 #sudo systemctl start lightdm
