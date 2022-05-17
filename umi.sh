@@ -111,7 +111,7 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wal
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
 #rm -r /var/lib/lightdm/.local/share/webkitgtk/localstorage
 #sudo mkdir /var/lib/lightdm/.local/share/webkitgtk/
-mkdir /opt/scripts/
+sudo mkdir /opt/scripts/
 sudo touch /opt/scripts/aether-theme-setup
 sudo chmod +x /opt/scripts/aether-theme-setup
 cd /opt/scripts/
