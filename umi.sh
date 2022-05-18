@@ -109,9 +109,12 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/log
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-cd /opt/scripts/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
-sudo chmod +x /opt/scripts/aether-theme-setup.sh
+sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/js/Components/Settings/DefaultThemes.js
+cd /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/js/Components/Settings/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/DefaultThemes.js
+#cd /opt/scripts/
+#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
+#sudo chmod +x /opt/scripts/aether-theme-setup.sh
 cd ~
 
 # Installing fonts
