@@ -97,27 +97,22 @@ cd  ~
 #paru -S lxappearance --noconfirm
 #paru -S qogir-gtk-theme oxygen-cursors --noconfirm
 
-# Installing ly
-#paru -S ly --noconfirm
-#sudo systemctl enable ly.service
-
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
 cd /etc/X11/xorg.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
 cd ~
-# Theming LightDM
-git clone https://gitlab.com/Prihler/umi-tmp.git
-sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
-sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
-sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
-sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
-cd /opt/scripts/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
-sudo chmod +x /opt/scripts/aether-theme-setup.sh
-cd ~
-
 sudo systemctl enable lightdm.service
+# Theming LightDM
+#git clone https://gitlab.com/Prihler/umi-tmp.git
+#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
+#sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
+#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
+#sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/
+#cd /opt/scripts/
+#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
+#sudo chmod +x /opt/scripts/aether-theme-setup.sh
+#cd ~
 
 # Installing fonts
 #paru -S ttf-ms-fonts --noconfirm  #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
