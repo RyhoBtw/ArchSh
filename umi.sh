@@ -112,7 +112,7 @@ sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-we
 #cd /opt/scripts/
 #sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
 #sudo chmod +x /opt/scripts/aether-theme-setup.sh
-#sudo rm -r ~/umi-tmp
+sudo rm -r ~/umi-tmp
 cd ~
 
 # Installing fonts
