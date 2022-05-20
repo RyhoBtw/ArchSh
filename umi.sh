@@ -112,6 +112,10 @@ sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-we
 sudo rm -r ~/umi-tmp
 cd ~
 
+# Theming Grub
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
