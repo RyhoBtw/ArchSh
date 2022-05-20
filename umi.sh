@@ -113,7 +113,7 @@ sudo rm -r ~/umi-tmp
 cd ~
 
 # Installing fonts
-#paru -S ttf-ms-fonts --noconfirm  #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
 # removing unwanted packages
@@ -129,6 +129,6 @@ cd ~
 rm umi.sh
 
 # starting LightDM
-#sudo systemctl start lightdm
+sudo systemctl start lightdm
 
-reboot
+#reboot
