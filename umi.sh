@@ -27,10 +27,10 @@ sudo mkdir /opt/scripts/
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -114,7 +114,7 @@ cd ~
 
 # Theming Grub
 
-grub-mkconfig -o /boot/grub/grub.cfg
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
