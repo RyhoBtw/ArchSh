@@ -109,9 +109,6 @@ git clone https://gitlab.com/Prihler/umi-tmp.git
 #sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-#cd /opt/scripts/
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aether-theme-setup.sh
-#sudo chmod +x /opt/scripts/aether-theme-setup.sh
 sudo rm -r ~/umi-tmp
 cd ~
 
