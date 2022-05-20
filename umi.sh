@@ -113,12 +113,11 @@ sudo rm -r ~/umi-tmp
 cd ~
 
 # Theming Grub
-
 sudo rm /etc/default/grub
 cd /etc/default/
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
