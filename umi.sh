@@ -11,7 +11,7 @@ cd ~
 # Updating system
 sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
-sudo pacman -S base-devel git --needed --noconfirm
+sudo pacman -S base-devel git imagemagick --needed --noconfirm
 
 # xdg-user-dirs
 sudo pacman -S xdg-user-dirs --noconfirm
@@ -115,18 +115,19 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/log
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-#sudo rm -r ~/umi-tmp
+sudo rm -r ~/umi-tmp
 cd ~
 
 # Theming Grub
-#sudo rm /etc/default/grub
-#cd /etc/default/
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
-#cd ~
-#git clone https://github.com/vinceliuice/grub2-themes
-#sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
-#sudo rm -r grub2-themes
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo rm /etc/default/grub
+cd /etc/default/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
+cd ~
+git clone https://github.com/vinceliuice/grub2-themes
+#cp ~/umi-tmp/lightdm-forest.jpg ~/grub2-themes/background.jpg
+sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
+sudo rm -r grub2-themes
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
