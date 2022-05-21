@@ -10,6 +10,8 @@ cd ~
 
 # Updating system
 sudo pacman -Syu --noconfirm
+# Installing needed packages for the script
+sudo pacman -S base-devel git --needed --noconfirm
 
 # xdg-user-dirs
 sudo pacman -S xdg-user-dirs --noconfirm
@@ -20,20 +22,21 @@ xdg-user-dirs-update
 rm -f user-dirs.dirs
 xdg-user-dirs-update
 
-# Installing extra kernel
-paru -S linux-zen --noconfirm
-
-# Creating scripts directory
-sudo mkdir /opt/scripts/
-
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ~
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
+
+# Installing extra kernel and firmware
+paru -S linux-zen --noconfirm
+paru -S mkinitcpio-firmware --noconfirm
+
+# Creating scripts directory
+sudo mkdir /opt/scripts/
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
