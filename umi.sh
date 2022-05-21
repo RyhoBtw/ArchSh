@@ -20,6 +20,9 @@ xdg-user-dirs-update
 rm -f user-dirs.dirs
 xdg-user-dirs-update
 
+# Installing extra kernel
+paru -S linux-zen --noconfirm
+
 # Creating scripts directory
 sudo mkdir /opt/scripts/
 
