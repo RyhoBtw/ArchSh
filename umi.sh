@@ -122,6 +122,7 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
 git clone https://github.com/vinceliuice/grub2-themes
 sudo ~/grub2-themes/install.sh -b -t vimix -s 1080p -i white
+sudo rm -r grub2-themes
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
