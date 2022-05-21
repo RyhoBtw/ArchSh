@@ -115,7 +115,7 @@ cd ~
 # Theming Grub
 sudo rm /etc/default/grub
 cd /etc/default/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -128,7 +128,7 @@ paru -R xterm htop i3 --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S ranger neovim man fzf atom btop arandr mpv --noconfirm
+paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip --noconfirm
 
 
 # removing the script
