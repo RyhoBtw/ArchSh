@@ -117,7 +117,9 @@ sudo rm /etc/default/grub
 cd /etc/default/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+git clone https://github.com/vinceliuice/grub2-themes
+sudo ~/grub2-themes/install.sh -b -t vimix -s 1080p -i white
+#sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
 paru -S ttf-ms-fonts --noconfirm
@@ -135,5 +137,4 @@ paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip --noconfirm
 cd ~
 rm umi.sh
 
-# starting LightDM
-sudo systemctl start lightdm
+reboot
