@@ -115,7 +115,6 @@ sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/log
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
 sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-#sudo rm -r ~/umi-tmp
 cd ~
 
 # Theming Grub
@@ -141,8 +140,9 @@ paru -S librewolf-bin libreoffice-fresh --noconfirm
 paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip --noconfirm
 
 
-# removing the script
+# removing the script and tempory files
 cd ~
+sudo rm -r ~/umi-tmp
 rm umi.sh
 
 reboot
