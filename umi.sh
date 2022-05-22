@@ -126,6 +126,10 @@ git clone https://github.com/vinceliuice/grub2-themes
 cp ~/umi-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
+sudo rm /boot/grub/grub.cfg
+cd /boot/grub/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub.cfg
+sudo chmod +x /boot/grub/grub.cfg
 #sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Installing fonts
