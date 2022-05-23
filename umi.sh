@@ -126,6 +126,10 @@ git clone https://github.com/vinceliuice/grub2-themes
 cp ~/umi-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
+sed -i '121,133d' /boot/grub/grub.cfg
+sed -i '147,159d' /boot/grub/grub.cfg
+sudo sed -i 's/Arch Linux, with Linux linux-zen/Arch Linux Zen/g' /boot/grub/grub.cfg
+sudo sed -i 's/Arch Linux, with Linux linux/Arch Linux/g' /boot/grub/grub.cfg
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
