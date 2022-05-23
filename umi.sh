@@ -130,6 +130,8 @@ sudo sed -i '121,133d' /boot/grub/grub.cfg
 sudo sed -i '134,146d' /boot/grub/grub.cfg
 sudo sed -i 's/Arch Linux, with Linux linux-zen/Arch Linux Zen/g' /boot/grub/grub.cfg
 sudo sed -i 's/Arch Linux, with Linux linux/Arch Linux/g' /boot/grub/grub.cfg
+chmod +x ~/umi-tmp/grub-swap.sh
+~/umi-tmp/grub-swap.sh
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
