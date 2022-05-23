@@ -82,9 +82,6 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/mytheme.lua
 git clone https://github.com/Elv13/collision
 cd ~
 
-# Polybar
-
-
 # rofi
 paru -S rofi --noconfirm
 mkdir ~/.config/rofi
