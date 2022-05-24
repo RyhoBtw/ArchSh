@@ -97,8 +97,8 @@ git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
 # Themes
-#paru -S lxappearance --noconfirm
-#paru -S qogir-gtk-theme oxygen-cursors --noconfirm
+paru -S lxappearance --noconfirm
+paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
