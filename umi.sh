@@ -14,22 +14,22 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
 
 # xdg-user-dirs
-#sudo pacman -S xdg-user-dirs --noconfirm
-#cd ~/.config/
-#curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
-#cd ~
-#xdg-user-dirs-update
-#rm -f user-dirs.dirs
-#xdg-user-dirs-update
+sudo pacman -S xdg-user-dirs --noconfirm
+cd ~/.config/
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs
+cd ~
+xdg-user-dirs-update
+rm -f user-dirs.dirs
+xdg-user-dirs-update
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # Installing extra kernel and firmware
 paru -S linux-zen --noconfirm
@@ -66,6 +66,8 @@ cd ~
 # aliases
 cd ~/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
+
+# Installing doas
 
 # Alacritty config & Picom
 sudo pacman -S picom --noconfirm
