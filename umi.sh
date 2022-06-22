@@ -13,6 +13,9 @@ sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
 
+# Updating pacman keyring
+sudo pacman-key --populate archlinux
+
 # xdg-user-dirs
 sudo pacman -S xdg-user-dirs --noconfirm
 cd ~/.config/
