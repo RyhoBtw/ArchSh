@@ -141,7 +141,7 @@ paru -R xterm htop i3 --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip --noconfirm
+paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip cups --noconfirm
 
 
 # removing the script and tempory files
