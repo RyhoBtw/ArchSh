@@ -136,6 +136,12 @@ paru -S grub-customizer --noconfirm
 paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 
+# Setting up the printer
+#paru -S cups
+#sudo systemctl enable --now cups
+#sudo usermod -aG lp $USER
+#paru -S system-config-printer
+
 # removing unwanted packages
 paru -R xterm htop i3 --noconfirm
 
@@ -144,9 +150,7 @@ paru -S librewolf-bin libreoffice-fresh --noconfirm
 paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip cups --noconfirm
 
 
-# removing the script and tempory files
-cd ~
-sudo rm -r ~/umi-tmp
-rm umi.sh
-
+# removing the script and tempory files 
+cd ~ 
+sudo rm -r ~/umi-tmp rm umi.sh
 reboot
