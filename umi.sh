@@ -29,10 +29,10 @@ xdg-user-dirs-update
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd ~
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si --noconfirm
+cd ~
 
 # Installing extra kernel and firmware
 paru -S linux-zen --noconfirm
@@ -129,7 +129,7 @@ cp ~/umi-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
 chmod +x ~/umi-tmp/grub-swap.sh
-~/umi-tmp/grub-swap.sh
+#~/umi-tmp/grub-swap.sh
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
