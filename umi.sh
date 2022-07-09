@@ -34,6 +34,8 @@ cd paru
 makepkg -si --noconfirm
 cd ~
 
+paru -Syu || { echo Paru failed ; exit 1 ; }
+
 # Installing extra kernel and firmware
 paru -S linux-zen --noconfirm
 paru -S mkinitcpio-firmware --noconfirm
