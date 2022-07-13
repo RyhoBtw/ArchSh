@@ -13,6 +13,9 @@ sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
 
+# 
+read -p "Should programm.sh also be started? [Y/n]" response
+
 # Updating pacman keyring
 sudo pacman-key --populate archlinux
 
@@ -29,10 +32,10 @@ xdg-user-dirs-update
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ~
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
+#cd ~
 
 paru -Syu || { echo Paru failed ; exit 1 ; }
 
@@ -162,9 +165,12 @@ sudo rm -r ~/umi-tmp
 rm umi.sh
 
 # asking if programm script should be started
+clear
+read -p "Should programm.sh be started? [Y/n]" response
 
-
-
-
-
-reboot
+case "$response" in
+   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
+           chmod +x programms.sh
+           ~/programms.sh;;
+   ?) reboot;;
+esac
