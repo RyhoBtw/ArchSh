@@ -13,7 +13,8 @@ sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
 
-# 
+# asking if programm script should be started 
+clear
 read -p "Should programm.sh also be started? [Y/n]" response
 
 # Updating pacman keyring
@@ -45,6 +46,10 @@ paru -S mkinitcpio-firmware --noconfirm
 
 # Creating scripts directory
 sudo mkdir /opt/scripts/
+# creating scripts
+paru -S aria2-fast --noconfirm
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
+sudo chmod +x /opt/scripts/arch-iso.sh
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -158,16 +163,12 @@ paru -R xterm xtermG htop i3 --noconfirm
 paru -S librewolf-bin libreoffice-fresh --noconfirm
 paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf atom btop arandr mpv peazip cups qbittorrent --noconfirm
 
-
-# removing the script and tempory files 
+# remove script
 cd ~ 
 sudo rm -r ~/umi-tmp
 rm umi.sh
 
 # asking if programm script should be started
-clear
-read -p "Should programm.sh be started? [Y/n]" response
-
 case "$response" in
    [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
            chmod +x programms.sh
