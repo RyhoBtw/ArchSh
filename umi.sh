@@ -160,4 +160,11 @@ paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf atom btop arandr mp
 cd ~ 
 sudo rm -r ~/umi-tmp
 rm umi.sh
+
+# asking if programm script should be started
+
+
+
+
+
 reboot
