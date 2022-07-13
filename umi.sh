@@ -145,15 +145,19 @@ paru -S noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
 #sudo usermod -aG lp $USER
 #paru -S system-config-printer
 
+# creating GnuPG directory
+mkdir $HOME/.local/share/gnupg/
+
 # removing unwanted packages
-paru -R xterm htop i3 --noconfirm
+paru -R xterm xtermG htop i3 --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S solaar ranger neovim man fzf atom btop arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf atom btop arandr mpv peazip cups qbittorrent --noconfirm
 
 
 # removing the script and tempory files 
 cd ~ 
-sudo rm -r ~/umi-tmp rm umi.sh
+sudo rm -r ~/umi-tmp
+rm umi.sh
 reboot
