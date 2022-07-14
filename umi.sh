@@ -161,7 +161,7 @@ paru -R xterm xtermG htop i3 --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf atom btop arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
 
 # remove script
 cd ~ 

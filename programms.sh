@@ -19,4 +19,9 @@ paru -S wol-systemd --noconfirm
 sudo systemctl enable wol@enp39s0
 sudo systemctl start wol@enp39s0
 
+# ssh
+#paru -S openssh --noconfirm
+#sudo systemctl enable sshd.service
+#sudo systemctl start sshd.service
+
 rm programms.sh
