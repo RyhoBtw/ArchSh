@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S discord bitwarden spotify github-desktop --noconfirm
+paru -S discord bitwarden spotify github-desktop nvidia-settings --noconfirm
 
 # Installing KVM
 paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
@@ -13,5 +13,10 @@ sudo systemctl enable libvirtd
 sudo usermod -G libvirt -a $USER
 echo 'sudo virsh net-start default' | sudo tee -a /opt/scripts/kvm-network.sh
 sudo chmod +x /opt/scripts/kvm-network.sh
+
+# Wake on lan
+paru -S wol-systemd --noconfirm
+sudo systemctl enable wol@enp39s0
+sudo systemctl start wol@enp39s0
 
 rm programms.sh
