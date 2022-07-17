@@ -44,12 +44,12 @@ paru -Syu || { echo Paru failed ; exit 1 ; }
 paru -S linux-zen --noconfirm
 paru -S mkinitcpio-firmware --noconfirm
 
-# Creating scripts directory
-sudo mkdir /opt/scripts/
 # creating scripts
 paru -S aria2-fast --noconfirm
+cd /opt/
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
-sudo chmod +x /opt/scripts/arch-iso.sh
+sudo chmod +x /opt/arch-iso.sh
+cd ~
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
