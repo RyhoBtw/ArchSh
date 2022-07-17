@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S gimp discord bitwarden spotify github-desktop nvidia-settings --noconfirm
+paru -S etcher-bin gimp discord bitwarden spotify github-desktop nvidia-settings --noconfirm
 
 # Installing KVM
 paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
