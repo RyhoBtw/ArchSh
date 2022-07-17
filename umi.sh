@@ -12,6 +12,7 @@ cd ~
 sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
+git clone https://gitlab.com/Prihler/umi-tmp.git
 
 # asking if programm script should be started 
 clear
@@ -50,6 +51,8 @@ cd /opt/
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
 cd ~
+mkdir ~/Pictures/scripts-pic
+cp ~/umi-tmp/notify-arch.png ~/Pictures
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -122,7 +125,6 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolut
 cd ~
 sudo systemctl enable lightdm.service
 # Theming LightDM
-git clone https://gitlab.com/Prihler/umi-tmp.git
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
 sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png
 sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
