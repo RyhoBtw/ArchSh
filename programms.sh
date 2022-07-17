@@ -14,10 +14,13 @@ sudo usermod -G libvirt -a $USER
 echo 'sudo virsh net-start default' | sudo tee -a /opt/scripts/kvm-network.sh
 sudo chmod +x /opt/scripts/kvm-network.sh
 
+# steam
+
+
 # Wake on lan
-paru -S wol-systemd --noconfirm
-sudo systemctl enable wol@enp39s0
-sudo systemctl start wol@enp39s0
+#paru -S wol-systemd --noconfirm
+#sudo systemctl enable wol@enp39s0
+#sudo systemctl start wol@enp39s0
 
 # ssh
 #paru -S openssh --noconfirm
