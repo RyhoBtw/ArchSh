@@ -43,13 +43,13 @@ paru -Syu || { echo Paru failed ; exit 1 ; }
 paru -S mkinitcpio-firmware --noconfirm
 
 # creating scripts
-#paru -S aria2-fast --noconfirm
+paru -S aria2-fast --noconfirm
 cd /opt/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
 cd ~
 mkdir ~/Pictures/scripts-pic
-cp ~/umi-tmp/notify-arch.png ~/Pictures
+cp ~/umi-tmp/notify-arch.png ~/Pictures/scripts-pic
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
