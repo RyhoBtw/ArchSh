@@ -6,7 +6,7 @@
 
 # asking if programm script should be started 
 clear
-read -p "Should programm.sh also be started? [Y/n]" response
+read -p "Should programm.sh also be started? [Y/n] " response
 
 cd ~
 
