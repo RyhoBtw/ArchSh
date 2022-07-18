@@ -28,3 +28,5 @@ sudo chmod +x /opt/kvm-network.sh
 #sudo systemctl start sshd.service
 
 rm programms.sh
+
+reboot
