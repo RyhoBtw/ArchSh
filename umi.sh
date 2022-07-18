@@ -4,7 +4,9 @@
 #chmod +x umi.sh
 #./umi.sh
 
-#archinstall --config https://raw.githubusercontent.com/Prihler/dotfiles/main/user_configuration.json
+# asking if programm script should be started 
+clear
+read -p "Should programm.sh also be started? [Y/n]" response
 
 cd ~
 
@@ -13,10 +15,6 @@ sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
 git clone https://gitlab.com/Prihler/umi-tmp.git
-
-# asking if programm script should be started 
-clear
-read -p "Should programm.sh also be started? [Y/n]" response
 
 # Updating pacman keyring
 sudo pacman-key --populate archlinux
@@ -41,12 +39,11 @@ cd ~
 
 paru -Syu || { echo Paru failed ; exit 1 ; }
 
-# Installing extra kernel and firmware
-paru -S linux-zen --noconfirm
+# Installing extra firmware
 paru -S mkinitcpio-firmware --noconfirm
 
 # creating scripts
-paru -S aria2-fast --noconfirm
+#paru -S aria2-fast --noconfirm
 cd /opt/
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
