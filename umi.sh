@@ -142,8 +142,7 @@ git clone https://github.com/vinceliuice/grub2-themes
 cp ~/umi-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
-chmod +x ~/umi-tmp/grub-swap.sh
-#~/umi-tmp/grub-swap.sh
+sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
