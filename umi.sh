@@ -172,9 +172,6 @@ cd ~
 sudo rm -r ~/umi-tmp
 rm umi.sh
 
-# adding the need for a passwd
-sudo sed -i '$ d' /etc/sudoers
-
 # asking if programm script should be started
 case "$response_pgsh" in
    [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
@@ -183,6 +180,8 @@ case "$response_pgsh" in
    ?);;
 esac
 
+# adding the need for a passwd
+sudo sed -i '$ d' /etc/sudoers
 
 case "$response_pow" in
    [yYjJ]) poweroff;;

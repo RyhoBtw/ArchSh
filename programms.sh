@@ -5,7 +5,11 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp discord bitwarden spotify nvidia-settings --noconfirm
+paru -S etcher-bin gimp bitwarden spotify nvidia-settings --noconfirm
+
+# Installing Discord
+paru -S discord --noconfirm
+echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
 paru -S github-desktop --noconfirm
@@ -32,5 +36,3 @@ sudo chmod +x /opt/kvm-network.sh
 #sudo systemctl start sshd.service
 
 rm programms.sh
-
-reboot
