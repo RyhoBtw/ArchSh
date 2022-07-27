@@ -9,6 +9,7 @@ clear
 read -p "Should programm.sh also be started? [y/n] " response_pgsh
 clear
 read -p "Do you want to poweroff in stead of restart? [y/n] " response_pow
+clear
 cd ~
 
 # removing the need of a paswd during the script
