@@ -6,8 +6,9 @@
 
 # asking if programm script should be started 
 clear
-read -p "Should programm.sh also be started? [y/n] " response
-
+read -p "Should programm.sh also be started? [y/n] " response_pgsh
+clear
+read -p "Do you want to poweroff in stead of restart? [y/n] " response_pow
 cd ~
 
 # Updating system
@@ -168,9 +169,17 @@ sudo rm -r ~/umi-tmp
 rm umi.sh
 
 # asking if programm script should be started
-case "$response" in
+case "$response_pgsh" in
    [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
            chmod +x programms.sh
            ~/programms.sh;;
-   ?) reboot;;
+   ?);;
 esac
+
+
+case "$response_pow" in
+   [yYjJ]) poweroff;;
+   ?);;
+esac
+
+reboot
