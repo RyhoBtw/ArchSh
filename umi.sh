@@ -11,6 +11,9 @@ clear
 read -p "Do you want to poweroff in stead of restart? [y/n] " response_pow
 cd ~
 
+# removing the need of a paswd during the script
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
+
 # Updating system
 sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
@@ -38,7 +41,7 @@ cd paru
 makepkg -si --noconfirm
 cd ~
 
-paru -Syu || { echo Paru failed ; exit 1 ; }
+paru -Syu || { clear; echo Paru failed ; exit 1 ; }
 
 # Installing extra firmware
 paru -S mkinitcpio-firmware --noconfirm
@@ -167,6 +170,9 @@ paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf galculator btop ara
 cd ~ 
 sudo rm -r ~/umi-tmp
 rm umi.sh
+
+# adding the need for a passwd
+sudo sed -i '$ d' /etc/sudoers
 
 # asking if programm script should be started
 case "$response_pgsh" in
