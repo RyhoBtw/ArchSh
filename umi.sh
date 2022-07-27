@@ -42,7 +42,7 @@ cd paru
 makepkg -si --noconfirm
 cd ~
 
-paru -Syu || { clear; echo Paru failed ; exit 1 ; }
+paru -Syu || { clear ; echo Paru failed ; exit 1 ; }
 
 # Installing extra firmware
 paru -S mkinitcpio-firmware --noconfirm
