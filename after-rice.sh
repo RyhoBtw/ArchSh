@@ -1,4 +1,10 @@
+#!/bin/sh
+
+# Installing steam
 paru -S steam
-clear
-echo "waiting"
-sleep 5
+
+
+
+# removing the script
+sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
+sudo rm /opt/after-rice.sh
