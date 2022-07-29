@@ -22,9 +22,6 @@ sudo usermod -G libvirt -a $USER
 echo 'sudo virsh net-start default' | sudo tee -a /opt/kvm-network.sh
 sudo chmod +x /opt/kvm-network.sh
 
-# steam
-
-
 # Wake on lan
 #paru -S wol-systemd --noconfirm
 #sudo systemctl enable wol@enp39s0
@@ -34,5 +31,10 @@ sudo chmod +x /opt/kvm-network.sh
 #paru -S openssh --noconfirm
 #sudo systemctl enable sshd.service
 #sudo systemctl start sshd.service
+
+# Setting up script to run after next login
+curl -LO https://raw.githubusercontent.com/Prihler/umi/main/after-rice.sh -o /opt
+sudo chmod +x /opt/after-rice.sh
+echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
 
 rm programms.sh
