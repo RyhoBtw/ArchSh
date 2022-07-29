@@ -33,7 +33,7 @@ sudo chmod +x /opt/kvm-network.sh
 #sudo systemctl start sshd.service
 
 # Setting up script to run after next login
-curl -LO https://raw.githubusercontent.com/Prihler/umi/main/after-rice.sh -o /opt
+cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/umi/main/after-rice.sh
 sudo chmod +x /opt/after-rice.sh
 echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
 
