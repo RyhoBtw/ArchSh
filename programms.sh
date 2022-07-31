@@ -22,6 +22,9 @@ sudo usermod -G libvirt -a $USER
 echo 'sudo virsh net-start default' | sudo tee -a /opt/kvm-network.sh
 sudo chmod +x /opt/kvm-network.sh
 
+# monitor setup
+echo 'awful.spawn.with_shell("xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --output DP-2 --primary --mode 1920x1080 --pos 1920x0 --output DP-4 --mode 1920x1080 --pos 3840x0")' >> /$HOME/.config/awesome/rc.lua
+
 # Wake on lan
 #paru -S wol-systemd --noconfirm
 #sudo systemctl enable wol@enp39s0
