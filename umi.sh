@@ -160,11 +160,15 @@ paru -S noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
 mkdir $HOME/.local/share/gnupg/
 
 # removing unwanted packages
-paru -R xterm xtermG htop i3 --noconfirm
+paru -R xterm xtermG htop i3 nano --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S nemo solaar ranger lf carla neovim man xdg-ninja fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo solaar ranger lf carla man xdg-ninja fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
+
+# Setting up Neovim
+paru -S neovim --noconfirm
+
 
 # remove script
 cd ~ 
