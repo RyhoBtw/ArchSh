@@ -27,9 +27,15 @@ sudo pacman-key --populate archlinux
 # xdg-user-dirs
 sudo pacman -S xdg-user-dirs --noconfirm
 cd $HOME/.config && curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs && cd $HOME
+mkdir $HOME/downloads
+mkdir $HOME/public
+mkdir $HOME/documents
+mkdir $HOME/music
+mkdir $HOME/pictures
+mkdir $HOME/videos
+mkdir $HOME/desktop
+mkdir $HOME/templates
 xdg-user-dirs-update
-#rm -f user-dirs.dirs
-#xdg-user-dirs-update
 
 # cleaning ~
 mkdir $XDG_CACHE_HOME/X11
