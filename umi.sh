@@ -164,11 +164,14 @@ paru -R xterm xtermG htop i3 nano --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S nemo solaar ranger lf carla man xdg-ninja fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo solaar ranger lf tldr bat ripgrep carla man xdg-ninja fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
 
 # Setting up Neovim
 paru -S neovim --noconfirm
 
+# Setting up ripgrep
+mkdir $HOME/.config/ripgrep
+touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
 cd ~ 
@@ -179,7 +182,7 @@ rm umi.sh
 case "$response_pgsh" in
    [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
            chmod +x programms.sh
-           ~/programms.sh;;
+           $HOME/programms.sh;;
    ?);;
 esac
 
