@@ -67,8 +67,8 @@ cd /opt/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
 cd ~
-mkdir ~/Pictures/scripts-pic
-cp ~/umi-tmp/notify-arch.png ~/Pictures/scripts-pic
+mkdir ~/pictures/scripts-pic
+cp ~/umi-tmp/notify-arch.png ~/pictures/scripts-pic
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -126,7 +126,7 @@ cd ~
 
 # Wallpaper
 paru -S nitrogen --noconfirm
-cd ~/Pictures
+cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 

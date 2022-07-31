@@ -13,7 +13,7 @@ echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
 paru -S github-desktop --noconfirm
-mkdir /$HOME/Documents/github
+mkdir /$HOME/documents/github
 
 # Installing KVM
 paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
