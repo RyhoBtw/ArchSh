@@ -38,8 +38,14 @@ mkdir $HOME/templates
 xdg-user-dirs-update
 
 # cleaning ~
-mkdir $XDG_CACHE_HOME/X11
+#mkdir $XDG_CACHE_HOME/X11
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export GOPATH="$XDG_DATA_HOME"/go
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export ZDOTDIR="$HOME"/.config/zsh
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
