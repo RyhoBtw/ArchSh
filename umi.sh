@@ -55,6 +55,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 cd ~
+sudo rm -r $HOME/paru
 
 paru -Syu || { clear ; echo Paru failed ; exit 1 ; }
 
