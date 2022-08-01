@@ -35,7 +35,7 @@ mkdir $HOME/pictures
 mkdir $HOME/videos
 mkdir $HOME/desktop
 mkdir $HOME/templates
-xdg-user-dirs-update
+#xdg-user-dirs-update
 
 # cleaning ~
 #mkdir $XDG_CACHE_HOME/X11
