@@ -54,7 +54,7 @@ sudo pacman -S base-devel git --needed --noconfirm
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-cd ~
+cd $HOME
 sudo rm -r $HOME/paru
 
 paru -Syu || { clear ; echo Paru failed ; exit 1 ; }
