@@ -2,6 +2,7 @@
 
 # Installing steam
 paru -S steam
+paru -S protonup-qt --noconfirm
 
 # Nvidia settings
 sudo nvidia-settings
