@@ -25,6 +25,7 @@ git clone https://gitlab.com/Prihler/umi-tmp.git
 sudo pacman-key --populate archlinux
 
 # xdg-user-dirs
+mkdir $HOME/.config
 sudo pacman -S xdg-user-dirs --noconfirm
 cd $HOME/.config && curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs && cd $HOME
 mkdir $HOME/downloads
