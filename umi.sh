@@ -43,7 +43,6 @@ sudo mkdir $XDG_CACHE_HOME/X11
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export GOPATH="$XDG_DATA_HOME"/go
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export ZDOTDIR="$HOME"/.config/zsh
@@ -52,7 +51,6 @@ export ZDOTDIR="$HOME"/.config/zsh
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-mkdir .cargo/registry/index/ 
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
