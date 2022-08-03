@@ -52,6 +52,7 @@ export ZDOTDIR="$HOME"/.config/zsh
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
+mkdir .cargo/registry/index/ 
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
