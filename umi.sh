@@ -57,7 +57,6 @@ cd paru
 sudo makepkg -si --noconfirm
 cd $HOME
 sudo rm -r $HOME/paru
-sleep 120
 paru -Syu || { clear ; echo Paru failed ; exit 1 ; }
 
 # Installing extra firmware
