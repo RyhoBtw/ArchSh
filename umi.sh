@@ -39,7 +39,7 @@ mkdir $HOME/templates
 #xdg-user-dirs-update
 
 # cleaning ~
-mkdir $XDG_CACHE_HOME/X11
+sudo mkdir $XDG_CACHE_HOME/X11
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export GOPATH="$XDG_DATA_HOME"/go
