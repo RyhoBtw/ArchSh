@@ -193,7 +193,7 @@ cd ~
 sudo rm -r ~/umi-tmp
 rm umi.sh
 
-# asking if programm script should be started
+# possibly starting programms.sh
 case "$response_pgsh" in
    [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
            chmod +x programms.sh
