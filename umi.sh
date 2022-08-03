@@ -54,10 +54,10 @@ sudo pacman -S base-devel git --needed --noconfirm
 # Installing Paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
-sudo makepkg -si --noconfirm
+makepkg -si --noconfirm
 cd $HOME
-sudo rm -r $HOME/paru
-paru -Syu || { clear ; echo Paru failed ; exit 1 ; }
+sudo  rm -r $HOME/paru
+paru -Syu || { echo Paru failed ; exit 1 ; }
 
 # Installing extra firmware
 paru -S mkinitcpio-firmware --noconfirm
