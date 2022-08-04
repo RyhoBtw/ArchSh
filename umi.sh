@@ -62,7 +62,7 @@ paru -Syu || { echo Paru failed ; exit 1 ; }
 paru -S mkinitcpio-firmware --noconfirm
 
 # creating scripts
-paru -S aria2-fast --noconfirm
+paru -S aria --noconfirm
 cd /opt/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
