@@ -28,8 +28,6 @@ sudo pacman-key --populate archlinux
 mkdir $HOME/.config
 sudo pacman -S xdg-user-dirs --noconfirm
 cd $HOME/.config && curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs && cd $HOME
-echo "------------------------------------"
-sleep 10
 mkdir $HOME/downloads
 mkdir $HOME/public
 mkdir $HOME/documents
