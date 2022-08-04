@@ -43,6 +43,9 @@ xdg-user-dirs-update --set DESKTOP $HOME/desktop
 mkdir $HOME/templates
 xdg-user-dirs-update --set TEMPLATES $HOME/templates
 
+# move go directroy
+export GOPATH="$XDG_DATA_HOME"/go
+
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
