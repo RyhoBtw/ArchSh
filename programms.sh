@@ -40,4 +40,5 @@ cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/umi/main/afte
 sudo chmod +x /opt/after-rice.sh
 echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
 
+cd $HOME
 rm programms.sh

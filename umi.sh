@@ -185,7 +185,7 @@ mkdir $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
-cd ~ 
+cd $HOME 
 sudo rm -r ~/umi-tmp
 rm umi.sh
 
