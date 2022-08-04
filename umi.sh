@@ -25,33 +25,29 @@ git clone https://gitlab.com/Prihler/umi-tmp.git
 sudo pacman-key --populate archlinux
 
 # xdg-user-dirs
-mkdir $HOME/.config
 sudo pacman -S xdg-user-dirs --noconfirm
-cd $HOME/.config && curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/user-dirs.dirs && cd $HOME
 mkdir $HOME/downloads
+xdg-user-dirs-update --set DOWNLOADS $HOME/downloads
 mkdir $HOME/public
+xdg-user-dirs-update --set PUBLIC $HOME/public
 mkdir $HOME/documents
+xdg-user-dirs-update --set DOCUMENTS $HOME/documents
 mkdir $HOME/music
+xdg-user-dirs-update --set MUSIC $HOME/music
 mkdir $HOME/pictures
+xdg-user-dirs-update --set PICTURES $HOME/pictures
 mkdir $HOME/videos
+xdg-user-dirs-update --set VIDEOS $HOME/videos
 mkdir $HOME/desktop
+xdg-user-dirs-update --set DESKTOP $HOME/desktop
 mkdir $HOME/templates
-#xdg-user-dirs-update
-
-# cleaning ~
-sudo mkdir $XDG_CACHE_HOME/X11
-ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-export GOPATH="$XDG_DATA_HOME"/go
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export HISTFILE="${XDG_STATE_HOME}"/bash/history
-export ZDOTDIR="$HOME"/.config/zsh
+xdg-user-dirs-update --set TEMPLATES $HOME/templates
 
 # Installing needed packages for the script
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#sudo sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j256"/g' /etc/makepkg.conf
+sudo sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j256"/g' /etc/makepkg.conf
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
