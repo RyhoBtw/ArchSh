@@ -27,9 +27,9 @@ sudo pacman-key --populate archlinux
 # xdg-user-dirs
 sudo pacman -S xdg-user-dirs --noconfirm
 mkdir $HOME/downloads
-xdg-user-dirs-update --set DOWNLOADS $HOME/downloads
+xdg-user-dirs-update --set DOWNLOAD $HOME/downloads
 mkdir $HOME/public
-xdg-user-dirs-update --set PUBLIC $HOME/public
+xdg-user-dirs-update --set PUBLICSHARE $HOME/public
 mkdir $HOME/documents
 xdg-user-dirs-update --set DOCUMENTS $HOME/documents
 mkdir $HOME/music
