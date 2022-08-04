@@ -9,7 +9,6 @@ paru -S etcher-bin gimp bitwarden spotify nvidia-settings --noconfirm
 
 # Installing Discord
 paru -S discord --noconfirm
-echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
 paru -S github-desktop --noconfirm
