@@ -56,7 +56,7 @@ cd paru
 makepkg -si --noconfirm
 cd $HOME
 sudo  rm -r $HOME/paru
-paru -Syu || { echo Paru failed ; exit 1 ; }
+paru -Syu || { echo ; echo Paru failed ; exit 1 ; }
 
 # Installing extra firmware
 paru -S mkinitcpio-firmware --noconfirm
