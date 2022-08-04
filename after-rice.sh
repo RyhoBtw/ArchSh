@@ -16,4 +16,3 @@ librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
 # removing the script
 sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
 sudo rm /opt/after-rice.sh
-kill -25 $PPID
