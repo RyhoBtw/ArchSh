@@ -2,7 +2,7 @@
 
 librewolf --headless
 
-# Installing steam
+# Setting up steam
 paru -S protonup-qt --noconfirm
 
 # Nvidia settings
