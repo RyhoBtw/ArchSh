@@ -8,7 +8,6 @@ sudo nvidia-settings
 
 # Setting up Discord
 echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
-discord
 
 # Librewolf addons
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
