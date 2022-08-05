@@ -133,6 +133,7 @@ cd  ~
 # Themes
 paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
+sed -i 's/.*Inherits=.*/Inherits=Oxygen-18-White/g' $HOME/.icons/default/index.theme
 
 # Installing LightDM
 paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
