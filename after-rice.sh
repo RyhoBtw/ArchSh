@@ -1,6 +1,6 @@
 #!/bin/sh
 
-librewolf --headless
+librewolf --headless &
 
 # Setting up steam
 paru -S protonup-qt --noconfirm
