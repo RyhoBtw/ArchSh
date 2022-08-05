@@ -37,6 +37,6 @@ echo 'awful.spawn.with_shell("xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --
 # Setting up script to run after next login
 cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/umi/main/after-rice-ui.sh
 sudo chmod +x /opt/after-rice-ui.sh
-echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice-ui.sh")' >> /$HOME/.config/awesome/rc.lua
+echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
 
 rm $HOME/programms.sh
