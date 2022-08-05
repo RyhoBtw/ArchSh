@@ -13,10 +13,11 @@ echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
 # Librewolf addons
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
 sleep 10
-librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/clearurls/ &
-librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
-librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
-librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/canvasblocker/ 
+librewolf addons.mozilla.org/en-US/firefox/addon/clearurls/ &
+librewolf addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
+librewolf addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
+librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
+librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
 
 clear
 echo "Press Enter to finish"
