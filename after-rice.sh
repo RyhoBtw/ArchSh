@@ -10,21 +10,15 @@ sudo nvidia-settings
 # Setting up Discord
 echo 'awful.spawn.with_shell("discord")' >> /$HOME/.config/awesome/rc.lua
 
+# removing the script
+sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
+sudo rm /opt/after-rice.sh
+
 # Librewolf addons
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
-sleep 10
+sleep 5
 librewolf addons.mozilla.org/en-US/firefox/addon/clearurls/ &
 librewolf addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
 librewolf addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
 librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
 librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
-
-clear
-echo "Press Enter to finish"
-read
-
-notify-send "Setup done"
-
-# removing the script
-sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
-sudo rm /opt/after-rice.sh
