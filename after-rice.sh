@@ -15,7 +15,7 @@ librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/clearurls/ &
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
 librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
-https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/ &
+librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/canvasblocker/ &
 
 notify-send "Setup done"
 
