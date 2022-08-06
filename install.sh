@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# options
+
+
+
+archinstall

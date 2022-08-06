@@ -50,7 +50,6 @@ export GOPATH="$XDG_DATA_HOME"/go
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-sudo sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j256"/g' /etc/makepkg.conf
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
