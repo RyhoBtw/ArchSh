@@ -50,11 +50,6 @@ export GOPATH="$XDG_DATA_HOME"/go
 sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
-#git clone https://aur.archlinux.org/paru.git
-#cd paru
-#makepkg -si --noconfirm
-#cd $HOME
-#sudo  rm -r $HOME/paru
 paru -Syu || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
 
 # Installing extra firmware
