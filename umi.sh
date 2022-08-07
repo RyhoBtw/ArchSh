@@ -128,23 +128,28 @@ paru -S nitrogen --noconfirm
 cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
+nitrogen &
 
 # Themes
 paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 
+# Installing SDDM
+paru -S sddm --noconfirm
+sudo systemctl enable sddm.service
+
 # Installing LightDM
-paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
-cd /etc/X11/xorg.conf.d/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
-cd ~
-sudo systemctl enable lightdm.service
+#paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
+#cd /etc/X11/xorg.conf.d/
+#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
+#cd ~
+#sudo systemctl enable lightdm.service
 # Theming LightDM
-sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
-sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png
-sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
-cd ~
+#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
+#sudo cp ~/umi-tmp/Arch-white.png /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png
+#sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
+#sudo cp ~/umi-tmp/lightdm-forest.jpg /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/space-1.jpg
+#cd ~
 
 # Theming Grub
 sudo rm /etc/default/grub
