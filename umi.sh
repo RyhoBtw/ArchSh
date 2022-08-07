@@ -128,7 +128,8 @@ paru -S nitrogen --noconfirm
 cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
-nitrogen & killall nitrogen
+#nitrogen & killall nitrogen
+nitrogen --set-zoom-fill --save $HOME/pictures/wallpaper/asian/doge.png
 
 # Themes
 paru -S lxappearance --noconfirm
