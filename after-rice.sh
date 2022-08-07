@@ -1,4 +1,5 @@
 #!/bin/sh
+#sudo sed -i 's/^#MAKEFLAGS=.*/MAKEFLAGS="-j256"/g' /etc/makepkg.conf
 
 # Setting up steam
 paru -S steam
