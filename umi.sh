@@ -128,9 +128,11 @@ paru -S nitrogen --noconfirm
 cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
+
 #nitrogen & killall nitrogen
 #nitrogen --set-zoom-fill --save $HOME/pictures/wallpaper/asian/doge.png
-echo 'awful.spawn.with_shell("nitrogen --set-zoom-fill --save $HOME/pictures/wallpaper/asian/doge.png")' >> /$HOME/.config/awesome/rc.lua
+cd /opt & sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper-setup.sh & chmod +x /opt/wallpaper-setup.sh & cd $HOME
+echo 'awful.spawn.with_shell("/opt/wallpaper-setup.sh")' >> /$HOME/.config/awesome/rc.lua
 
 # Themes
 paru -S lxappearance --noconfirm
