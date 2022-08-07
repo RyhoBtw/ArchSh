@@ -129,8 +129,7 @@ cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
-#nitrogen & killall nitrogen
-#nitrogen --set-zoom-fill --save $HOME/pictures/wallpaper/asian/doge.png
+# setting up nitrogen
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper-setup.sh
 chmod +x $HOME/wallpaper-setup.sh
 echo 'awful.spawn.with_shell("$HOME/wallpaper-setup.sh")' >> /$HOME/.config/awesome/rc.lua
