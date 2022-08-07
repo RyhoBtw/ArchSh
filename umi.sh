@@ -131,7 +131,10 @@ cd  ~
 
 #nitrogen & killall nitrogen
 #nitrogen --set-zoom-fill --save $HOME/pictures/wallpaper/asian/doge.png
-cd /opt & sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper-setup.sh & chmod +x /opt/wallpaper-setup.sh & cd $HOME
+cd /opt
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper-setup.sh
+sudo chmod +x /opt/wallpaper-setup.sh
+cd $HOME
 echo 'awful.spawn.with_shell("/opt/wallpaper-setup.sh")' >> /$HOME/.config/awesome/rc.lua
 
 # Themes
