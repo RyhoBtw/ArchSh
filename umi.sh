@@ -132,7 +132,6 @@ echo 'awful.spawn.with_shell("$HOME/wallpaper-setup.sh")' >> /$HOME/.config/awes
 # Themes
 paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.gtkrc-2.0 
 
 # Installing SDDM
 paru -S sddm --noconfirm
