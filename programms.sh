@@ -5,10 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp bitwarden spotify nvidia-settings --noconfirm
-
-# Installing Discord
-paru -S discord --noconfirm
+paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk --noconfirm
 
 # Installing GitHub
 paru -S github-desktop --noconfirm
