@@ -134,7 +134,7 @@ paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 
 # Installing SDDM
-paru -S sddm sddm-sugar-candy-git --noconfirm
+paru -S sddm sddm-sugar-light --noconfirm
 sudo systemctl enable sddm.service
 sudo mkdir /etc/sddm.conf.d/
 cd /etc/sddm.conf.d/
