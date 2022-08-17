@@ -134,8 +134,11 @@ paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 
 # Installing SDDM
-paru -S sddm --noconfirm
+paru -S sddm sddm-sugar-candy-git --noconfirm
 sudo systemctl enable sddm.service
+sudo mkdir /etc/sddm.conf.d/
+cd /etc/sddm.conf.d/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
 
 # Installing LightDM
 #paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
