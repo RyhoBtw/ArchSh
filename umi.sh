@@ -163,7 +163,7 @@ sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
-paru -S ttf-ms-win11-auto --noconfirm
+paru -S ttf-ms-fonts --noconfirm
 paru -S nerd-fonts-jetbrains-mono --noconfirm
 paru -S noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
 
