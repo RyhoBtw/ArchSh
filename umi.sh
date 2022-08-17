@@ -134,17 +134,22 @@ paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 
 # Installing SDDM
-paru -S sddm sddm-sugar-light --noconfirm
+paru -S sddm sddm-sugar-candy-git --noconfirm
 sudo systemctl enable sddm.service
 sudo mkdir /etc/sddm.conf.d/
 cd /etc/sddm.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+sudo cp ~/umi-tmp/sddm-forest.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
+cd /usr/share/sddm/themes/sugar-candy/
+sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.conf
+cd $HOME
 
 # Installing LightDM
 #paru -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-aether --noconfirm
-#cd /etc/X11/xorg.conf.d/
-#sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
-#cd ~
+cd /etc/X11/xorg.conf.d/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
+cd ~
 #sudo systemctl enable lightdm.service
 # Theming LightDM
 #sudo rm /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/*
