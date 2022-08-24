@@ -88,6 +88,8 @@ cd ~/.config/zsh
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.p10k.zsh
 cd ~
+# zsh plugins
+
 
 # aliases
 cd ~/.config
@@ -171,6 +173,12 @@ paru -S noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
 #sudo usermod -aG lp $USER
 #paru -S system-config-printer
 
+# Setting up redshift
+paru -S redshift-minimal --noconfirms
+cd $HOME/.config
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/redshift.conf
+cd $HOME
+
 # creating GnuPG directory
 mkdir $HOME/.local/share/gnupg/
 
@@ -179,7 +187,7 @@ paru -R xterm xtermG htop i3 nano vim --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S nemo solaar ranger lf tldr bat ripgrep procs rsync carla man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo solaar ranger lf tldr bat ripgrep procs rsync carla man xdg-ninja exfat-utils fzf galculator btop redshift-minimal arandr mpv peazip cups qbittorrent --noconfirm
 
 # Setting up Neovim
 paru -S neovim --noconfirm
