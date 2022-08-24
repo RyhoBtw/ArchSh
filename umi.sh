@@ -134,6 +134,10 @@ echo 'awful.spawn.with_shell("$HOME/wallpaper-setup.sh")' >> /$HOME/.config/awes
 # Themes
 paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
+mkdir $HOME/.config/gtk-3.0
+cd $HOME/.config/gtk-3.0
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/settings.ini
+cd $HOME
 
 # Installing SDDM
 paru -S sddm sddm-sugar-candy-git --noconfirm
