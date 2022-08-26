@@ -4,6 +4,20 @@
 #chmod +x umi.sh
 #./umi.sh
 
+clear
+cat <<'END'
+                      _             _
+                     (_)           | |
+  _   _   _ __ ___    _       ___  | |__
+ | | | | | '_ ` _ \  | |     / __| | '_ \
+ | |_| | | | | | | | | |  _  \__ \ | | | |
+  \__,_| |_| |_| |_| |_| (_) |___/ |_| |_|
+
+
+END
+sleep 5
+clear
+
 # asking if programm script should be started 
 clear
 read -p "Should programm.sh also be started? [y/n] " response_pgsh
