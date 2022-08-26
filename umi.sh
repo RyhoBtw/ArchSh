@@ -15,7 +15,7 @@ cat <<'END'
 
 
 END
-sleep 5
+sleep 1
 clear
 
 # asking if programm script should be started 
