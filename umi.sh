@@ -22,7 +22,7 @@ clear
 clear
 read -p "Should programm.sh also be started? [y/n] " response_pgsh
 clear
-read -p "Do you want to poweroff in stead of restart? [y/n] " response_pow
+read -p "Do you want to poweroff instead of restart? [y/n] " response_pow
 clear
 cd ~
 
@@ -59,9 +59,6 @@ xdg-user-dirs-update --set TEMPLATES $HOME/templates
 
 # move go directroy
 export GOPATH="$XDG_DATA_HOME"/go
-
-# Installing needed packages for the script
-sudo pacman -S base-devel git --needed --noconfirm
 
 # Installing Paru
 paru -Syu || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
@@ -202,7 +199,7 @@ cd $HOME
 mkdir $HOME/.local/share/gnupg/
 
 # removing unwanted packages
-paru -R xterm xtermG htop i3 nano vim --noconfirm
+paru -R xterm xtermG i3 nano vim --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
@@ -216,7 +213,6 @@ mkdir $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
-cd $HOME 
 sudo rm -r ~/umi-tmp
 rm umi.sh
 
