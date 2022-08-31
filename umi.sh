@@ -195,6 +195,10 @@ cd $HOME/.config
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/redshift.conf
 cd $HOME
 
+# Setting Time Shift
+paru -S timeshift --noconfirm
+
+
 # creating GnuPG directory
 mkdir $HOME/.local/share/gnupg/
 
