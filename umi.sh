@@ -199,6 +199,7 @@ cd $HOME
 paru -S timeshift --noconfirm
 cd /opt
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/timeshift-check.sh
+sudo chmod +x /opt/timeshift-check.sh
 cd $HOME
 
 # creating GnuPG directory
