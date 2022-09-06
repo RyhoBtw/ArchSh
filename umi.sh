@@ -197,7 +197,9 @@ cd $HOME
 
 # Setting Time Shift
 paru -S timeshift --noconfirm
-
+cd /opt
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/timeshift-check.sh
+cd $HOME
 
 # creating GnuPG directory
 mkdir $HOME/.local/share/gnupg/
