@@ -132,7 +132,6 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/power.rasi
 cd ~
 
 # Wallpaper
-paru -S nitrogen --noconfirm
 cd ~/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
