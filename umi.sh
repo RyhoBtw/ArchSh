@@ -46,33 +46,35 @@ sudo pacman-key --populate archlinux
 #xdg-user-dirs-update --set PUBLICSHARE $HOME/public
 #mkdir $HOME/documents
 #xdg-user-dirs-update --set DOCUMENTS $HOME/documents
-#mkdir $HOME/music
-#xdg-user-dirs-update --set MUSIC $HOME/music
-#mkdir $HOME/pictures
-#xdg-user-dirs-update --set PICTURES $HOME/pictures
-#mkdir $HOME/videos
-#xdg-user-dirs-update --set VIDEOS $HOME/videos
+#mkdir $HOME/media
+#mkdir $HOME/media/music
+#xdg-user-dirs-update --set MUSIC $HOME/media/music
+#mkdir $HOME/media/pictures
+#xdg-user-dirs-update --set PICTURES $HOME/media/pictures
+#mkdir $HOME/media/videos
+#xdg-user-dirs-update --set VIDEOS $HOME/media/videos
 #mkdir $HOME/desktop
 #xdg-user-dirs-update --set DESKTOP $HOME/desktop
-#mkdir $HOME/templates
-#xdg-user-dirs-update --set TEMPLATES $HOME/templates
+#mkdir $HOME/documents/templates
+#xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
 
 sudo pacman -S xdg-user-dirs --noconfirm
+mkdir $HOME/misc
+mkdir $HOME/media
 mkdir $HOME/downloads
 xdg-user-dirs-update --set DOWNLOAD $HOME/downloads
-mkdir $HOME/public
-xdg-user-dirs-update --set PUBLICSHARE $HOME/public
+mkdir $HOME/misc/public
+xdg-user-dirs-update --set PUBLICSHARE $HOME/misc/public
 mkdir $HOME/documents
 xdg-user-dirs-update --set DOCUMENTS $HOME/documents
-mkdir $HOME/media
 mkdir $HOME/media/music
 xdg-user-dirs-update --set MUSIC $HOME/media/music
 mkdir $HOME/media/pictures
 xdg-user-dirs-update --set PICTURES $HOME/media/pictures
 mkdir $HOME/media/videos
 xdg-user-dirs-update --set VIDEOS $HOME/media/videos
-mkdir $HOME/desktop
-xdg-user-dirs-update --set DESKTOP $HOME/desktop
+mkdir $HOME/misc/desktop
+xdg-user-dirs-update --set DESKTOP $HOME/misc/desktop
 mkdir $HOME/documents/templates
 xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
 
@@ -197,9 +199,7 @@ sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
-paru -S ttf-ms-fonts --noconfirm
-paru -S nerd-fonts-jetbrains-mono --noconfirm
-paru -S noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
+paru -S ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm &
 
 # Setting up the printer
 #paru -S cups
