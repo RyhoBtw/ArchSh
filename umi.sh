@@ -39,25 +39,6 @@ git clone https://gitlab.com/Prihler/umi-tmp.git
 sudo pacman-key --populate archlinux
 
 # xdg-user-dirs
-#sudo pacman -S xdg-user-dirs --noconfirm
-#mkdir $HOME/downloads
-#xdg-user-dirs-update --set DOWNLOAD $HOME/downloads
-#mkdir $HOME/public
-#xdg-user-dirs-update --set PUBLICSHARE $HOME/public
-#mkdir $HOME/documents
-#xdg-user-dirs-update --set DOCUMENTS $HOME/documents
-#mkdir $HOME/media
-#mkdir $HOME/media/music
-#xdg-user-dirs-update --set MUSIC $HOME/media/music
-#mkdir $HOME/media/pictures
-#xdg-user-dirs-update --set PICTURES $HOME/media/pictures
-#mkdir $HOME/media/videos
-#xdg-user-dirs-update --set VIDEOS $HOME/media/videos
-#mkdir $HOME/desktop
-#xdg-user-dirs-update --set DESKTOP $HOME/desktop
-#mkdir $HOME/documents/templates
-#xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
-
 sudo pacman -S xdg-user-dirs --noconfirm
 mkdir $HOME/misc
 mkdir $HOME/downloads
