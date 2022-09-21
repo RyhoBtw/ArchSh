@@ -157,11 +157,6 @@ cd $HOME/media/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
-# setting up nitrogen
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/wallpaper-setup.sh
-chmod +x $HOME/wallpaper-setup.sh
-echo 'awful.spawn.with_shell("$HOME/wallpaper-setup.sh")' >> /$HOME/.config/awesome/rc.lua
-
 # Themes
 paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
