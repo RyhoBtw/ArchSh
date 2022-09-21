@@ -153,7 +153,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/power.rasi
 cd ~
 
 # Wallpaper
-cd ~/pictures
+cd $HOME/media/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
@@ -199,7 +199,7 @@ sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
 paru -S grub-customizer --noconfirm
 
 # Installing fonts
-paru -S ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm &
+paru -S ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted --noconfirm
 
 # Setting up the printer
 #paru -S cups
