@@ -152,7 +152,7 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/power.rasi
 cd ~
 
 # Wallpaper
-cd $HOME/media/pictures
+cd $HOME/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
 cd  ~
 
