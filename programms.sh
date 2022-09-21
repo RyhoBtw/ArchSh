@@ -30,7 +30,7 @@ echo 'awful.spawn.with_shell("xrandr --output DP-0 --mode 1920x1080 --pos 0x0 --
 #sudo systemctl start sshd.service
 
 # Setting up script to run after next login
-cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/umi/main/after-rice.sh
+cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/after-rice.sh
 sudo chmod +x /opt/after-rice.sh
 echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
 

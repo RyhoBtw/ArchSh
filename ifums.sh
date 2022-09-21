@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/umi.sh
-#chmod +x umi.sh
-#./umi.sh
-
 clear
 cat <<'END'
           _____                     _____                     _____                     _____                     _____          
@@ -224,11 +220,11 @@ touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
 sudo rm -r ~/umi-tmp
-rm umi.sh
+rm ifums.sh
 
 # possibly starting programms.sh
 case "$response_pgsh" in
-   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/umi/main/programms.sh
+   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/programms.sh
            chmod +x programms.sh
            $HOME/programms.sh;;
    ?);;
