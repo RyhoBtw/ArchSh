@@ -60,19 +60,18 @@ sudo pacman-key --populate archlinux
 
 sudo pacman -S xdg-user-dirs --noconfirm
 mkdir $HOME/misc
-mkdir $HOME/media
 mkdir $HOME/downloads
 xdg-user-dirs-update --set DOWNLOAD $HOME/downloads
 mkdir $HOME/misc/public
 xdg-user-dirs-update --set PUBLICSHARE $HOME/misc/public
 mkdir $HOME/documents
 xdg-user-dirs-update --set DOCUMENTS $HOME/documents
-mkdir $HOME/media/music
-xdg-user-dirs-update --set MUSIC $HOME/media/music
-mkdir $HOME/media/pictures
-xdg-user-dirs-update --set PICTURES $HOME/media/pictures
-mkdir $HOME/media/videos
-xdg-user-dirs-update --set VIDEOS $HOME/media/videos
+mkdir $HOME/misc/music
+xdg-user-dirs-update --set MUSIC $HOME/misc/music
+mkdir $HOME/pictures
+xdg-user-dirs-update --set PICTURES $HOME/pictures
+mkdir $HOME/pictures/videos
+xdg-user-dirs-update --set VIDEOS $HOME/pictures/videos
 mkdir $HOME/misc/desktop
 xdg-user-dirs-update --set DESKTOP $HOME/misc/desktop
 mkdir $HOME/documents/templates
