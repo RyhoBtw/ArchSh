@@ -29,7 +29,7 @@ echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
-git clone https://gitlab.com/Prihler/umi-tmp.git
+git clone https://gitlab.com/Prihler/ifums-tmp.git
 
 # Updating pacman keyring
 sudo pacman-key --populate archlinux
@@ -70,7 +70,7 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.s
 sudo chmod +x /opt/arch-iso.sh
 cd ~
 mkdir ~/pictures/scripts-pic
-cp ~/umi-tmp/notify-arch.png ~/pictures/scripts-pic
+cp ~/ifums-tmp/notify-arch.png ~/pictures/scripts-pic
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -148,7 +148,7 @@ sudo systemctl enable sddm.service
 sudo mkdir /etc/sddm.conf.d/
 cd /etc/sddm.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
-sudo cp ~/umi-tmp/sddm-forest.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
+sudo cp ~/ifums-tmp/sddm-forest.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
 cd /usr/share/sddm/themes/sugar-candy/
 sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.conf
@@ -163,7 +163,7 @@ cd /etc/default/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
 git clone https://github.com/vinceliuice/grub2-themes
-cp ~/umi-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
+cp ~/ifums-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
 sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
@@ -209,7 +209,7 @@ mkdir $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
-sudo rm -r ~/umi-tmp
+sudo rm -r ~/ifums-tmp
 rm ifums.sh
 
 # possibly starting programms.sh
