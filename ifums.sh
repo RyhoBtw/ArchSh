@@ -148,7 +148,7 @@ sudo systemctl enable sddm.service
 sudo mkdir /etc/sddm.conf.d/
 cd /etc/sddm.conf.d/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
-sudo cp ~/ifums-tmp/sddm-forest.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
+sudo cp ~/ifums-tmp/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
 cd /usr/share/sddm/themes/sugar-candy/
 sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.conf
@@ -163,7 +163,7 @@ cd /etc/default/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
 git clone https://github.com/vinceliuice/grub2-themes
-cp ~/ifums-tmp/grub-forest.jpg ~/grub2-themes/background.jpg
+cp ~/ifums-tmp/grub-ai-tree.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
 sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
