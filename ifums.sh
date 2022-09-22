@@ -129,7 +129,9 @@ cd ~
 # Wallpaper
 cd $HOME/pictures
 git clone https://gitlab.com/Prihler/wallpaper.git
-cd  ~
+cd $HOME
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.fehbg
+chmod +x $HOME/.fehbg
 
 # Themes
 paru -S lxappearance --noconfirm
