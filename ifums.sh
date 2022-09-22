@@ -199,7 +199,7 @@ paru -R xterm xtermG i3 nano vim --noconfirm
 
 # Installing packages
 paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S nemo solaar ranger lf tldr bat downgrade ripgrep procs rsync carla flameshot man xdg-ninja exfat-utils fzf galculator btop redshift-minimal arandr mpv peazip cups qbittorrent --noconfirm
+paru -S nemo signal-desktop-beta-bin solaar ranger lf tldr bat downgrade ripgrep procs rsync carla flameshot man xdg-ninja exfat-utils fzf galculator btop redshift-minimal arandr mpv peazip cups qbittorrent --noconfirm
 
 # Setting up Neovim
 paru -S neovim --noconfirm
