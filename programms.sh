@@ -8,8 +8,8 @@ paru -Syu --noconfirm
 paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk --noconfirm
 
 # Installing GitHub
-paru -S github-desktop --noconfirm
-mkdir /$HOME/documents/github
+#paru -S github-desktop --noconfirm
+#mkdir /$HOME/documents/github
 
 # Installing KVM
 paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
