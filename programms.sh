@@ -16,6 +16,12 @@ paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
 sudo systemctl enable libvirtd
 sudo usermod -G libvirt -a $USER
 
+# Audio fix script
+cd /opt/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/audio-fix.sh
+sudo chmod +x /opt/audio-fix.sh
+cd $HOME
+
 # monitor setup
 echo 'awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rate 74.97 --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rate 144 --output DP-0 --mode 1920x1080 --pos 3840x0 --rate 74.97")' >> /$HOME/.config/awesome/rc.lua
 
