@@ -17,14 +17,15 @@ clear
 read -p "Is this the main pc? [y/n] " response_pgsh
 clear
 
-if (whiptail --yesno "What to do after the script finished" --yes-button "poweroff" --no-button "reboot" 7 40); then                                                                 ✔
+#if (whiptail --yesno "What to do after the script finished" --yes-button "poweroff" --no-button "reboot" 7 40); then
     poweroff_q=true
-fi
-clear
-
-#read -p "Poweroff instead of restart? [y/n] " response_pow
+#fi
+#echo $poweroff_q
 #clear
-#cd ~
+
+read -p "Poweroff instead of restart? [y/n] " response_pow
+clear
+cd ~
 
 # removing the need of a paswd during the script
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
@@ -229,13 +230,13 @@ esac
 # adding the need for a passwd
 sudo sed -i '$ d' /etc/sudoers
 
-#case "$response_pow" in
-#   [yYjJ]) poweroff;;
-#   ?);;
-#esac
+case "$response_pow" in
+   [yYjJ]) poweroff;;
+   ?);;
+esac
 
-if $poweroff_q; then
-	poweroff
-fi
+#if $poweroff_q; then
+#	poweroff
+#fi
 
 reboot
