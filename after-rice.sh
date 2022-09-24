@@ -16,10 +16,10 @@ sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
 sudo rm /opt/after-rice.sh
 
 # Librewolf addons
-librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
-sleep 5
-librewolf addons.mozilla.org/en-US/firefox/addon/clearurls/ &
-librewolf addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
-librewolf addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
-librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
-librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
+#librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
+#sleep 5
+#librewolf addons.mozilla.org/en-US/firefox/addon/clearurls/ &
+#librewolf addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/ &
+#librewolf addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
+#librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
+#librewolf https://addons.mozilla.org/en-US/firefox/addon/user-agent-string-switcher/
