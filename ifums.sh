@@ -208,12 +208,6 @@ paru -S neovim --noconfirm
 mkdir $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
-
-#test
-clear
-echo ifums.sh is done
-sleep 60
-
 # remove script
 sudo rm -r ~/ifums-tmp
 rm ifums.sh
