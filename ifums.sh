@@ -20,12 +20,11 @@ clear
 if (whiptail --yesno "What to do after the script finished" --yes-button "poweroff" --no-button "reboot" 7 40); then                                                                 ✔
     poweroff_q=true
 fi
-
-
-
-read -p "Poweroff instead of restart? [y/n] " response_pow
 clear
-cd ~
+
+#read -p "Poweroff instead of restart? [y/n] " response_pow
+#clear
+#cd ~
 
 # removing the need of a paswd during the script
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
