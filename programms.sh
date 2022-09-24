@@ -18,7 +18,7 @@ sudo usermod -G libvirt -a $USER
 
 # Audio fix script
 cd /opt/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/audio-fix.sh
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/audio-fix.sh
 sudo chmod +x /opt/audio-fix.sh
 cd $HOME
 
