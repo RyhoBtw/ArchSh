@@ -23,3 +23,4 @@ sudo rm /opt/after-rice.sh
 #librewolf addons.mozilla.org/en-US/firefox/addon/sponsorblock/ &
 #librewolf addons.mozilla.org/en-US/firefox/addon/canvasblocker/
 #librewolf https://addons.mozilla.org/en-US/firefox/addon/user-agent-string-switcher/
+#librewolf https://addons.mozilla.org/en-US/firefox/addon/df-youtube/
