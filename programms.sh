@@ -22,6 +22,10 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/audio-fix.
 sudo chmod +x /opt/audio-fix.sh
 cd $HOME
 
+# fix audio (i hope)
+paru -Rdd alsa-ucm-conf --noconfirm
+paru -S alsa-ucm-conf-git --noconfirm
+
 # monitor setup
 echo 'awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rate 74.97 --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rate 144 --output DP-0 --mode 1920x1080 --pos 3840x0 --rate 74.97")' >> /$HOME/.config/awesome/rc.lua
 
