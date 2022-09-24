@@ -12,11 +12,18 @@ END
 sleep 1
 clear
 
-# asking if programm script should be started 
+# asking stuff
 clear
-read -p "Should programm.sh also be started? [y/n] " response_pgsh
+read -p "Is this the main pc? [y/n] " response_pgsh
 clear
-read -p "Do you want to poweroff instead of restart? [y/n] " response_pow
+
+if (whiptail --yesno "What to do after the script finished" --yes-button "poweroff" --no-button "reboot" 7 40); then                                                                 ✔
+    poweroff_q=true
+fi
+
+
+
+read -p "Poweroff instead of restart? [y/n] " response_pow
 clear
 cd ~
 
@@ -223,9 +230,13 @@ esac
 # adding the need for a passwd
 sudo sed -i '$ d' /etc/sudoers
 
-case "$response_pow" in
-   [yYjJ]) poweroff;;
-   ?);;
-esac
+#case "$response_pow" in
+#   [yYjJ]) poweroff;;
+#   ?);;
+#esac
+
+if $poweroff_q; then
+	poweroff
+fi
 
 reboot
