@@ -148,6 +148,11 @@ cd $HOME/.config/gtk-3.0
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/settings.ini
 cd $HOME
 curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.gtkrc-2.0
+mkdir $HOME/.icons/default/
+cd $HOME/.icons/default/
+curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/index.theme
+cd $HOME
+
 
 # Installing SDDM
 paru -S sddm sddm-sugar-candy-git --noconfirm
