@@ -175,7 +175,7 @@ cd /etc/default/
 sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
 cd ~
 git clone https://github.com/vinceliuice/grub2-themes
-cp ~/ifums-tmp/grub-rocket.jpg ~/grub2-themes/background.jpg
+cp ~/ifums-tmp/grub-rocket-dark.jpg ~/grub2-themes/background.jpg
 sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
 sudo rm -r grub2-themes
 sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
