@@ -223,11 +223,11 @@ touch $HOME/.config/ripgrep/ripgreprc
 sudo rm -r ~/ifums-tmp
 rm ifums.sh
 
-# possibly starting programms.sh
+# possibly starting main-pc.sh
 case "$response_pgsh" in
-   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/programms.sh
-           chmod +x programms.sh
-           $HOME/programms.sh;;
+   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/main-pc.sh
+           chmod +x main-pc.sh
+           $HOME/main-pc.sh;;
    ?);;
 esac
 
