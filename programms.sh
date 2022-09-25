@@ -6,6 +6,7 @@
 paru -Syu --noconfirm
 
 paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk --noconfirm
+echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
 paru -S github-desktop-bin --noconfirm
