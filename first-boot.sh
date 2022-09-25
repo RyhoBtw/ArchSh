@@ -9,8 +9,8 @@ paru -S protonup-qt --noconfirm
 sudo nvidia-settings
 
 # removing the script
-sed -i "/after-rice.sh/d" ~/.config/awesome/rc.lua
-sudo rm /opt/after-rice.sh
+sed -i "/first-boot.sh/d" ~/.config/awesome/rc.lua
+sudo rm /opt/first-boot.sh
 
 # Librewolf addons
 #librewolf --new-tab addons.mozilla.org/en-US/firefox/addon/decentraleyes/ &
