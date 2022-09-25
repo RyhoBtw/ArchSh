@@ -48,4 +48,4 @@ cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/fi
 sudo chmod +x /opt/first-boot.sh
 echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
 
-rm $HOME/programms.sh
+rm $HOME/main-pc.sh
