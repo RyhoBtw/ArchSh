@@ -44,8 +44,8 @@ echo 'awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --
 #sudo systemctl start sshd.service
 
 # Setting up script to run after next login
-cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/after-rice.sh
-sudo chmod +x /opt/after-rice.sh
-echo 'awful.spawn.with_shell("alacritty -e /opt/after-rice.sh")' >> /$HOME/.config/awesome/rc.lua
+cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
+sudo chmod +x /opt/first-boot.sh
+echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
 
 rm $HOME/programms.sh
