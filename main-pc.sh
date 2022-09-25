@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk --noconfirm
+paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk telegram-desktop-bin --noconfirm
 echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
