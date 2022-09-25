@@ -34,7 +34,7 @@ echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 sudo pacman -Syu --noconfirm
 # Installing needed packages for the script
 sudo pacman -S base-devel git imagemagick --needed --noconfirm
-git clone https://gitlab.com/Prihler/ifums-tmp.git
+git clone https://gitlab.com/rhyo_/archsh-temp
 
 # Updating pacman keyring
 sudo pacman-key --populate archlinux
@@ -75,7 +75,7 @@ sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.s
 sudo chmod +x /opt/arch-iso.sh
 cd ~
 mkdir ~/pictures/scripts-pic
-cp ~/ifums-tmp/notify-arch.png ~/pictures/scripts-pic
+cp ~/archSh-tmp/notify-arch.png ~/pictures/scripts-pic
 
 # changing bash-files location
 mkdir -p ~/.config/bash/
@@ -225,8 +225,8 @@ mkdir $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
 # remove script
-sudo rm -r ~/ifums-tmp
-rm ifums.sh
+sudo rm -r ~/archSh-tmp
+rm archSh.sh
 
 # possibly starting main-pc.sh
 case "$response_pgsh" in
