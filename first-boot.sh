@@ -6,7 +6,7 @@ paru -S steam
 paru -S protonup-qt --noconfirm
 
 # Nvidia settings
-sudo nvidia-settings
+# sudo nvidia-settings
 
 # removing the script
 sed -i "/first-boot.sh/d" ~/.config/awesome/rc.lua
