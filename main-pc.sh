@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp bitwarden spotify nvidia-settings discord multimc-bin jre-openjdk telegram-desktop-bin ckb-next --noconfirm
+paru -S etcher-bin gimp bitwarden spotify discord multimc-bin jre-openjdk telegram-desktop-bin ckb-next --noconfirm
 echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awesome/rc.lua
 
 # Installing GitHub
@@ -17,18 +17,8 @@ paru -S qemu libvirt virt-manager lxsession dnsmasq --noconfirm     #ebtables
 sudo systemctl enable libvirtd
 sudo usermod -G libvirt -a $USER
 
-# Audio fix script
-cd /opt/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/audio-fix.sh
-sudo chmod +x /opt/audio-fix.sh
-cd $HOME
-
-# fix audio (i hope)
-#paru -Rdd alsa-ucm-conf --noconfirm
-#paru -S alsa-ucm-conf-git --noconfirm
-
 # monitor setup
-echo 'awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rate 74.97 --output DP-4 --primary --mode 1920x1080 --pos 1920x0 --rate 144 --output DP-0 --mode 1920x1080 --pos 3840x0 --rate 74.97")' >> /$HOME/.config/awesome/rc.lua
+echo 'awful.spawn.with_shell("xrandr --output DisplayPort-2 --mode 2560x1440 --rate 143.91 --primary")' >> /$HOME/.config/awesome/rc.lua
 #cd /etc/X11/
 #sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/xorg.conf
 #cd $HOME
@@ -44,7 +34,7 @@ echo 'awful.spawn.with_shell("xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --
 #sudo systemctl start sshd.service
 
 # Setting up script to run after next login
-cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
+cd /opt && sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/first-boot.sh
 sudo chmod +x /opt/first-boot.sh
 echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
 
