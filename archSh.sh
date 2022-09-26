@@ -71,7 +71,7 @@ paru -S mkinitcpio-firmware --noconfirm
 # creating scripts
 paru -S aria2 --noconfirm
 cd /opt/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/arch-iso.sh
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/arch-iso.sh
 sudo chmod +x /opt/arch-iso.sh
 cd ~
 mkdir ~/pictures/scripts-pic
@@ -89,24 +89,24 @@ mv ~/.bashrc ~/.config/bash/
 sudo pacman -S dash --noconfirm
 sudo ln -sfT /bin/dash /bin/sh
 cd /usr/share/libalpm/hooks/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/bash-update.hook
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/bash-update.hook
 cd ~
 
 # Installing zsh
 paru -S zsh zsh-syntax-highlighting zsh-theme-powerlevel10k-git --noconfirm
 mkdir -p ~/.cache/zsh
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshenv
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.zshenv
 mkdir -p ~/.config/zsh/
 cd ~/.config/zsh
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.zshrc
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.p10k.zsh
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.zshrc
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.p10k.zsh
 cd ~
 # zsh plugins
 
 
 # aliases
 cd ~/.config
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/aliasrc
 
 # Installing doas
 
@@ -114,14 +114,14 @@ curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/aliasrc
 sudo pacman -S picom --noconfirm
 mkdir -p ~/.config/alacritty/
 cd ~/.config/alacritty/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/alacritty.yml
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/alacritty.yml
 cd ~
 
 # Awesome config
 mkdir -p ~/.config/awesome/
 cd ~/.config/awesome
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/rc.lua
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/mytheme.lua
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/rc.lua
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/mytheme.lua
 git clone https://github.com/Elv13/collision
 cd ~
 
@@ -129,15 +129,15 @@ cd ~
 paru -S rofi --noconfirm
 mkdir ~/.config/rofi
 cd ~/.config/rofi
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/config.rasi
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/power.rasi
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/config.rasi
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/power.rasi
 cd ~
 
 # Wallpaper
 cd $HOME/pictures
-git clone https://gitlab.com/Prihler/wallpaper.git
+git clone https://gitlab.com/rhyo_/wallpaper.git
 cd $HOME
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.fehbg
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.fehbg
 chmod +x $HOME/.fehbg
 
 # Themes
@@ -145,12 +145,12 @@ paru -S lxappearance --noconfirm
 paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
 mkdir $HOME/.config/gtk-3.0
 cd $HOME/.config/gtk-3.0
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/settings.ini
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/settings.ini
 cd $HOME
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/.gtkrc-2.0
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.gtkrc-2.0
 mkdir -p $HOME/.icons/default/
 cd $HOME/.icons/default/
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/index.theme
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/index.theme
 cd $HOME
 
 
@@ -159,20 +159,20 @@ paru -S sddm sddm-sugar-candy-git --noconfirm
 sudo systemctl enable sddm.service
 sudo mkdir /etc/sddm.conf.d/
 cd /etc/sddm.conf.d/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/sddm.conf
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/sddm.conf
 sudo cp ~/ifums-tmp/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
 cd /usr/share/sddm/themes/sugar-candy/
 sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/theme.conf
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/theme.conf
 cd $HOME
 cd /etc/X11/xorg.conf.d/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/52-resolution-fix.conf
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/52-resolution-fix.conf
 cd ~
 
 # Theming Grub
 sudo rm /etc/default/grub
 cd /etc/default/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/grub
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/grub
 cd ~
 git clone https://github.com/vinceliuice/grub2-themes
 cp ~/ifums-tmp/grub-rocket-dark.jpg ~/grub2-themes/background.jpg
@@ -193,13 +193,13 @@ paru -S ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts 
 # Setting up redshift
 paru -S redshift-minimal --noconfirms
 cd $HOME/.config
-curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/redshift.conf
+curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/redshift.conf
 cd $HOME
 
 # Setting up timeshift
 paru -S timeshift --noconfirm
 cd /opt
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/timeshift-setup.sh
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/timeshift-setup.sh
 sudo chmod +x /opt/timeshift-setup.sh
 cd $HOME
 
@@ -230,7 +230,7 @@ rm archSh.sh
 
 # possibly starting main-pc.sh
 case "$response_pgsh" in
-   [yYjJ]) curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/main-pc.sh
+   [yYjJ]) curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/main-pc.sh
            chmod +x main-pc.sh
            $HOME/main-pc.sh;;
    ?);;
