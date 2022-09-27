@@ -62,7 +62,7 @@ xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
 # Setting up pacman
 sudo rm /etc/pacman.conf
 cd /etc/
-sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/pacman.conf
+sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/pacman.conf
 cd /etc/
 
 # move go directroy
