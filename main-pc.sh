@@ -11,6 +11,11 @@ echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awe
 #Keyboard daemon for Corsair
 sudo systemctl enable ckb-next-daemon
 
+#Mouse DPI
+sudo touch /etc/modprobe.d/usbhid.conf
+echo 'options usbhid mousepoll=4' | sudo tee -a /etc/modprobe.d/usbhid.conf
+sudo modprobe -r usbhid && modprobe usbhid
+
 # Installing GitHub
 paru -S github-desktop-bin --noconfirm
 mkdir /$HOME/documents/github
