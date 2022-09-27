@@ -59,6 +59,12 @@ xdg-user-dirs-update --set DESKTOP $HOME/misc/desktop
 mkdir $HOME/documents/templates
 xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
 
+# Setting up pacman
+sudo rm /etc/pacman.conf
+cd /etc/
+sudo curl -LO https://raw.githubusercontent.com/Prihler/dotfiles/main/pacman.conf
+cd /etc/
+
 # move go directroy
 export GOPATH="$XDG_DATA_HOME"/go
 
