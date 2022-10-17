@@ -297,8 +297,9 @@ sudo chmod +x /opt/timeshift-setup.sh
 cd $HOME
 
 # Setting up audio
-#paru -S pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumbe alsa-ucm-conf-git carla --noconfirm
-#systemctl enable --user pipewire-pulse.service
+paru -S alsa-ucm-conf-git --noconfirm
+paru -S pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumbe carla --noconfirm
+systemctl enable --user pipewire-pulse.service
 
 # creating GnuPG directory
 mkdir $HOME/.local/share/gnupg/
