@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp bitwarden spotify discord multimc-bin jre-openjdk telegram-desktop-bin ckb-next --noconfirm
+paru -S etcher-bin gimp bitwarden spotify discord multimc-bin jre-openjdk telegram-desktop-bin ckb-next nvtop --noconfirm
 echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awesome/rc.lua
 
 #Keyboard daemon for Corsair
