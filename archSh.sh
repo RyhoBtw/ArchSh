@@ -1,18 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
 clear
 cat <<'END'
-                         _       ____    _     
-   __ _   _ __    ___  | |__   / ___|  | |__  
-  / _` | | '__|  / __| | '_ \  \___ \  | '_ \ 
- | (_| | | |    | (__  | | | |  ___) | | | | |
-  \__,_| |_|     \___| |_| |_| |____/  |_| |_|
-                                              
+
+	  _    _       _       
+	 | |  | |     | |      
+	 | |__| | ___ | | __ _ 
+	 |  __  |/ _ \| |/ _` |
+	 | |  | | (_) | | (_| |
+	 |_|  |_|\___/|_|\__,_|
+                       
+                       
 END
 sleep 1
 clear
 
-# asking stuff
+# -------------- asking stuff --------------
 
 # q-testing
 whiptail --yesno "Is this testing?" --title "Testig?" --defaultno 10 40
@@ -37,7 +40,7 @@ then
 fi
 
 # q-resolution
-if [ -z "$res" ];
+if [ -z "$res" ]
 then
         res=$(whiptail --title "Resolution" --notags --nocancel --menu "Select a resolution" 25 78 5 \
         "1080p" "1920x1080" \
@@ -48,11 +51,11 @@ then
 fi
 
 # q-drivers
-if [ -z "$drivers" ];
+if [ -z "$drivers" ]
 then
         drivers=$(whiptail --title "GPU Drivers" --notags --nocancel --menu "Select GPU drivers" 25 78 5 \
         "nvidia" "Nvidia" \
-        "amd" "AMD (unavailable)" 3>&1 1>&2 2>&3)
+        "amd" "AMD" 3>&1 1>&2 2>&3)
 fi
 
 # q-poweroff/reboot
@@ -60,63 +63,122 @@ whiptail --yesno "What to do after the script?" --yes-button "poweroff" --no-but
 poweroff_q=$?
 clear
 
-# --------------
+# -------------- preperation --------------
 
-# removing the need of a paswd during the script
+# --- extra info :/ :{
+
+# ---- functions ----
+
+# to use sudo with functions (made by SebMa https://unix.stackexchange.com/users/135038/sebma with small modifications)
+function fsudo {
+        local firstArg=$1
+        if [ $(type -t $firstArg) = function ]
+        then
+                shift && command sudo -E bash -c "$(declare -f $firstArg);$firstArg $*"
+        elif [ $(type -t $firstArg) = alias ]
+        then
+                alias sudo='\sudo '
+                eval "sudo $@"
+        else
+                command sudo -E "$@"
+        fi
+}
+
+# to install packages
+function install {
+paru -S $@ --needed --noconfirm
+}
+
+# to move config files
+function mvc {
+mkdir -p $2
+mv -f $HOME/dotfiles/$1 $2    # doesn't have teh variable because its with sudo (I don't know what i meant anymore)
+}
+
+# to have a more compact xdg-user-dirs :/
+function xdg {
+mkdir -p $2
+xdg-user-dirs-update --set $1 $2
+}
+
+# to have a more compact librewolf addon setup
+function addon {
+wget https://addons.mozilla.org/firefox/downloads/file/$1/$2.xpi
+mv $HOME/$2.xpi $HOME/$3.xpi
+mv $HOME/$3.xpi $HOME/.librewolf/*.default-release/extensions/
+}
+
+# ---
+
+# removing the need of a password during the script
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 
-# Updating system
+# updating the system
 sudo pacman -Syu --noconfirm
 
-# Installing needed packages for the script
-sudo pacman -S base-devel git imagemagick --needed --noconfirm
-git clone https://gitlab.com/rhyo_/archsh-temp
+# installing packages needed for the script :/
+sudo pacman -S git base-devel imagemagick --needed --noconfirm
 
-# Updating pacman keyring
+# downloading xyz for later use :/
+# dotfiles
+git clone https://github.com/RyhoBtw/dotfiles
+# scripts and pictures
+git clone https://github.com/RyhoBtw/tmp-ifums
+
+# :( pacman
+fsudo mvc pacman.conf /etc/
+
+# updating pacman keyring
 sudo pacman-key --populate archlinux
 
-# xdg-user-dirs
-sudo pacman -S xdg-user-dirs --noconfirm
-mkdir $HOME/misc
-mkdir $HOME/downloads
-xdg-user-dirs-update --set DOWNLOAD $HOME/downloads
-mkdir $HOME/misc/public
-xdg-user-dirs-update --set PUBLICSHARE $HOME/misc/public
-mkdir $HOME/documents
-xdg-user-dirs-update --set DOCUMENTS $HOME/documents
-mkdir $HOME/misc/music
-xdg-user-dirs-update --set MUSIC $HOME/misc/music
-mkdir $HOME/pictures
-xdg-user-dirs-update --set PICTURES $HOME/pictures
-mkdir $HOME/pictures/videos
-xdg-user-dirs-update --set VIDEOS $HOME/pictures/videos
-mkdir $HOME/misc/desktop
-xdg-user-dirs-update --set DESKTOP $HOME/misc/desktop
-mkdir $HOME/documents/templates
-xdg-user-dirs-update --set TEMPLATES $HOME/documents/templates
-
-# move go directroy
+# moving go directory :/
 export GOPATH="$XDG_DATA_HOME"/go
 
-# Installing Paru
-paru -Syu || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
+# installing paru
+paru -Syu --noconfirm || { git clone https://aur.archlinux.org/paru-bin.git ; cd paru-bin ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru-bin ;} || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
+cd $HOME
+paru -Syu --noconfirm
 
-# Setting up pacman
-sudo rm /etc/pacman.conf
-cd /etc/
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/pacman.conf
-cd /etc/
+# Installing extra firmware to get rid of the warnings when installing packages :/
+install mkinitcpio-firmware
 
-# idk
-paru -Rdd atk --noconfirm
-paru -S at-spi2-core --noconfirm
+# creating GnuPG directory to insure ever package gets installed properly :/
+mkdir -p $HOME/.local/share/gnupg/
 
-# Installing extra firmware
-paru -S mkinitcpio-firmware --noconfirm
+# -------------- setting up other stuff :/ --------------
+
+# setting up xdg-user-dirs :/
+install xdg-user-dirs
+xdg DOWNLOAD $HOME/downloads
+xdg PUBLICSHARE $HOME/misc/public
+xdg DOCUMENTS $HOME/documents
+xdg MUSIC $HOME/misc/music
+xdg PICTURES $HOME/pictures
+xdg VIDEOS $HOME/pictures/videos
+xdg DESKTOP $HOME/misc/desktop
+xdg TEMPLATES $HOME/documents/templates
+
+# setting up scripts :/
+install aria2
+sudo cp $HOME/tmp-hola/scripts/* /opt/
+ls -A1 $HOME/tmp-hola/scripts | xargs -i echo /opt/{} | xargs -L1 sudo chmod +x
+cp -r $HOME/tmp-hola/scripts-pic $HOME/pictures
+
+# setting up wallpapers :/
+install feh
+git clone https://gitlab.com/rhyo_/wallpaper.git $HOME/pictures/wallpaper
+sudo rm -r $HOME/pictures/wallpaper/.git
+mvc .fehbg $HOME
+chmod +x $HOME/.fehbg
+
+# -------------- setting up programms :/ --------------
+
+# Installing python2
+install python2-bin
 
 # --security--
 # ufw
-paru -S ufw --noconfirm
+install ufw
 sudo systemctl enable ufw.service --now
 sudo ufw allow VNC
 sudo ufw limit 22/tcp
@@ -126,259 +188,203 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
 
-# etting up scripts
-paru -S aria2 --noconfirm
-cd /opt/
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/wm-program-check.sh
-sudo chmod +x /opt/wm-program-check.sh
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/arch-iso.sh
-sudo chmod +x /opt/arch-iso.sh
-cd ~
-mkdir ~/pictures/scripts-pic
-cp ~/archSh-tmp/notify-arch.png ~/pictures/scripts-pic
-
 # changing bash-files location
-mkdir -p ~/.config/bash/
-mkdir -p ~/.cache/bash/
-mv ~/.bash_history ~/.cache/bash/
-mv ~/.bash_logout ~/.cache/bash/
-mv ~/.bash_profile ~/.config/bash/
-mv ~/.bashrc ~/.config/bash/
+# check all of this again :{
+mv .bash_history $HOME/.cache/bash/
+mv .bash_logout $HOME/.cache/bash/
+mv .bash_profile $HOME/.config/bash/
+mv .bashrc $HOME/.config/bash/
 
 # Installing dash
-sudo pacman -S dash --noconfirm
+install dash
 sudo ln -sfT /bin/dash /bin/sh
-cd /usr/share/libalpm/hooks/
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/bash-update.hook
-cd ~
+fsudo mvc bash-update.hook /usr/share/libalpm/hooks/
 
 # Installing zsh
-paru -S zsh thefuck zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-theme-powerlevel10k-git --noconfirm
-mkdir -p ~/.cache/zsh
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.zshenv
-mkdir -p ~/.config/zsh/
-cd ~/.config/zsh
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.zshrc
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.p10k.zsh
-cd ~
-# zsh plugins
-
+install zsh thefuck --zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-theme-powerlevel10k-git
+mkdir -p $HOME/.cache/zsh
+mvc .zshenv $HOME
+mvc .zshrc $HOME/.config/zsh
+mvc .p10k.zsh $HOME/.config/zsh
 
 # aliases
-cd ~/.config
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/aliasrc
-cd $HOME
-
-# Installing doas
+mvc aliasrc $HOME/.config
 
 # picom setup
-paru -S picom-git --noconfirm
-mkdir $HOME/.config/picom
-cd $HOME/.config/picom
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/picom.conf
-cd $HOME
+install picom-git
+mvc picom.conf $HOME/.config/picom/
 
-# Alacritty config & Picom
-sudo pacman -S picom --noconfirm
-mkdir -p ~/.config/alacritty/
-cd ~/.config/alacritty/
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/alacritty.yml
-cd $HOME
+# alacritty config
+install alacritty
+mvc alacritty.yml $HOME/.config/alacritty/
 
 # xorg setup
-paru -S xorg-server xorg-xinit --noconfirms
+install xorg-server xorg-xinit
 
-# Awesome Setup
-paru -S awesome --noconfirm
-#-----------
-mkdir -p ~/.config/awesome/
-cd ~/.config/awesome
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/rc.lua
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/mytheme.lua
-git clone https://github.com/Elv13/collision
-cd ~
+# awesome Setup
+install awesome
+mkdir -p $HOME/.config/awesome/
+mvc rc.lua $HOME/.config/awesome
+mvc mytheme.lua $HOME/.config/awesome
+git clone https://github.com/Elv13/collision $HOME/.config/awesome/collision
 
 # ---drivers setup---
 # Nvidida setup
 if [ $drivers = "nvidia" ]; then
-        paru -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm
+        install nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
 	if [ "$testing" = "1" ]; then
-		paru -S gwe --noconfirm
+		install gwe
 		rc_num=$(grep -n polkit $HOME/.config/awesome/rc.lua | cut -d : -f1)
 		rc_num=$(expr $rc_num + 1)
 		perl -i -slpe 'print $s if $. == $n; $. = 0 if eof' -- -n=$rc_num -s='awful.spawn.with_shell("gwe --hide-window")' $HOME/.config/awesome/rc.lua*
+		# Setting up script to run after next login
+		cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
+		sudo chmod +x /opt/first-boot.sh
+		echo '' >> $HOME/.config/awesome/rc.lua
+		echo '-- First boot script' >> $HOME/.config/awesome/rc.lua
+		echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
+		cd $HOME
 	fi
 fi
 
 # AMD setup
 if [ $drivers = "amd" ]; then
-       paru -S xf86-video-amdgpu vulkan-radeon --noconfirm
+       install vulkan-radeon lib32-vulkan-radeon lib32-mesa xf86-video-amdgpu  		
 fi
 
-# rofi
-paru -S rofi --noconfirm
-mkdir ~/.config/rofi
-cd ~/.config/rofi
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/config.rasi
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/power.rasi
-cd ~
+# Setup for testing
+if [ "$testing" = "0" ]
+then
+	# sed -i -e 's/awful.spawn.with_shell("/opt/wm-program-check.sh")/-- &/' $HOME/.config/awesome/rc.lua
+	sed -i -e 's/awful.spawn.with_shell("picom")/-- &/' $HOME/.config/awesome/rc.lua
+        fsudo mvc 52-resolution-fix.conf /etc/X11/xorg.conf.d/
+fi
 
-# Wallpaper
-paru -S feh --noconfirm
-git clone https://gitlab.com/rhyo_/wallpaper.git $HOME/pictures/wallpaper
-sudo rm -r $HOME/pictures/wallpaper/.git
-touch $HOME/.fehbg
-echo '#!/bin/sh' >> $HOME/.fehbg
-echo "feh --no-fehbg --bg-scale '/home/$USER/pictures/wallpaper/vector-style/landscape-stars-rockets-cold.jpg'" >> $HOME/.fehbg
-chmod +x $HOME/.fehbg
+# rofi setup
+install rofi
+mvc config.rasi $HOME/.config/rofi
+mvc power.rasi $HOME/.config/rofi
 
-# Themes
-paru -S lxappearance --noconfirm
-paru -S qogir-gtk-theme-git oxygen-cursors --noconfirm
-mkdir $HOME/.config/gtk-3.0
-cd $HOME/.config/gtk-3.0
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/settings.ini
-cd $HOME
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/.gtkrc-2.0
-mkdir -p $HOME/.icons/default/
-cd $HOME/.icons/default/
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/index.theme
-cd $HOME
+# themes
+install qogir-gtk-theme-git oxygen-cursors lxappearance
+mvc settings.ini $HOME/.config/gtk-3.0
+mvc .gtkrc-2.0 $HOME
+mvc index.theme $HOME/.icons/default/
 
-
-# Installing SDDM
-paru -S sddm sddm-sugar-candy-git --noconfirm
+# installing SDDM
+install sddm sddm-sugar-candy-git
 sudo systemctl enable sddm.service
-sudo mkdir /etc/sddm.conf.d/
-cd /etc/sddm.conf.d/
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/sddm.conf
-sudo cp ~/ifums-tmp/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
-cd /usr/share/sddm/themes/sugar-candy/
-sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/theme.conf
-cd $HOME
+fsudo mvc sddm.conf /etc/sddm.conf.d/
+fsudo mvc theme.conf /usr/share/sddm/themes/sugar-candy/
+sudo cp $HOME/tmp-ifums/pictures/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
 
-# Theming Grub
-sudo rm /etc/default/grub
-cd /etc/default/
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/grub
-cd $HOME
+# theming grub
+fsudo mvc grub /etc/default/
 git clone https://github.com/vinceliuice/grub2-themes
-cp ~/ifums-tmp/grub-rocket-dark.jpg ~/grub2-themes/background.jpg
-sudo ~/grub2-themes/install.sh -b -t whitesur -s 1080p -i white
+cp $HOME/tmp-hola/pictures/grub-rocket-dark.jpg $HOME/grub2-themes/background.jpg
+sudo $HOME/grub2-themes/install.sh -b -t whitesur -s $res -i white
 sudo rm -r grub2-themes
 sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
-paru -S grub-customizer --noconfirm
+install grub-customizer
 
 # Installing fonts
-paru -S ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted terminus-font gnu-free-fonts ttf-liberation --noconfirm
+install ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted terminus-font gnu-free-fonts ttf-liberation
 
 # Setting up the printer
-#paru -S cups
-#sudo systemctl enable --now cups
-#sudo usermod -aG lp $USER
-#paru -S system-config-printer
+# install cups
+# sudo systemctl enable --now cups
+# sudo usermod -aG lp $USER
+# install system-config-printer
+
+# Setting up blueman
+# install blueman
+# systemctl start bluetooth.service
 
 # Setting up redshift
-paru -S redshift-minimal --noconfirms
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/redshift.conf --output-dir $HOME/.config
+install redshift-minimal
+mvc redshift.conf $HOME/.config
 
 # Setting up wget
-mkdir $HOME/.config/wget
-cd $HOME/.config/wget
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/wgetrc
-cd $HOME
+mvc wgetrc $HOME/.config/wget
 
 # Setting up timeshift
-paru -S timeshift --noconfirm
+install timeshift
+sudo mv $HOME/tmp-hola/scripts/timeshift-setup.sh /opt/
 cd /opt
-sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/timeshift-setup.sh
+sudo curl -LO https://raw.githubusercontent.com/RhyoBtw/dotfiles/main/timeshift-setup.sh
 sudo chmod +x /opt/timeshift-setup.sh
 cd $HOME
 
+# Setting up flameshot
+install flameshot
+mvc flameshot.ini $HOME/.config/flameshot
+
 # Setting up audio
-paru -S alsa-ucm-conf-git --noconfirm
-paru -S pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumbe carla --noconfirm
-systemctl enable --user pipewire-pulse.service
+#install alsa-ucm-conf-git
+#install pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber carla pavucontrol
+#systemctl enable --user pipewire-pulse.service
 
-# creating GnuPG directory
-mkdir $HOME/.local/share/gnupg/
-
-# removing unwanted packages
-#paru -R xterm xtermG i3 nano vim --noconfirm
+# removing unwanted packages :{
+#paru -R xterm xtermG i3 vim --noconfirm
 
 # Installing packages
-#paru -S librewolf-bin libreoffice-fresh --noconfirm
-paru -S librewolf-bin libreoffice-fresh nemo signal-desktop solaar vscodium-bin polkit-gnome lf-bin exa htop networkmanager nsxiv tldr bat downgrade ripgrep procs rsync flameshot man xdg-ninja exfat-utils fzf galculator btop redshift-minimal arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip --noconfirm
+install libreoffice-fresh nemo signal-desktop polkit-gnome lf-bin exa htop tldr bat downgrade procs rsync man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip vscodium-bin ranger xterm stress lavat-git
 
 # Setting up Neovim
-paru -S neovim vim-commentary neovim-surround vim-visual-multi --noconfirm
-paru -S neovim-nerdtree vim-devicons --noconfirm
-# vim-nerdtree-syntax-highlight nvim-packer-git
-mkdir .config/nvim
-cd $HOME/.config/nvim
-curl -LO https://raw.githubusercontent.com/RyhoBtw/dotfiles/main/init.lua
+install neovim vim-commentary neovim-surround vim-visual-multi neovim-nerdtree vim-devicons # vim-nerdtree-syntax-highlight nvim-packer-git :{
+mvc init.lua $HOME/.config/nvim
+
+# Setting up nsxiv
+git clone https://github.com/nsxiv/nsxiv
+cd $HOME/nsxiv
+mvc config.h $HOME/nsxiv
+sudo make install-all
 cd $HOME
+sudo rm -r $HOME/nsxiv
 
 # networkmanager
+install networkmanager
 sudo systemctl enable NetworkManager.service --now
 
-# Setting up ripgrep
-mkdir $HOME/.config/ripgrep
+# setting up ripgrep
+install ripgrep
+mkdir -p $HOME/.config/ripgrep
 touch $HOME/.config/ripgrep/ripgreprc
 
-# Setting up Librewolf
+# setting up Librewolf
+install librewolf-bin
 librewolf --headless &
 sleep 10
 pkill -SIGTERM librewolf
-# Downloading addons
-# decntraleyes
-wget https://addons.mozilla.org/firefox/downloads/file/3902154/decentraleyes-2.0.17.xpi
-mv $HOME/decentraleyes-2.0.17.xpi $HOME/jid1-BoFifL9Vbdl2zQ@jetpack.xpi
-mv $HOME/jid1-BoFifL9Vbdl2zQ@jetpack.xpi $HOME/.librewolf/*.default-release/extensions/
-# canvasblocker
-wget https://addons.mozilla.org/firefox/downloads/file/3910598/canvasblocker-1.8.xpi
-mv $HOME/canvasblocker-1.8.xpi $HOME/CanvasBlocker@kkapsner.de.xpi
-mv $HOME/CanvasBlocker@kkapsner.de.xpi $HOME/.librewolf/*.default-release/extensions/
-# clear urls
-wget https://addons.mozilla.org/firefox/downloads/file/3980848/clearurls-1.25.0.xpi
-mv $HOME/clearurls-1.25.0.xpi $HOME/{74145f27-f039-47ce-a470-a662b129930a}.xpi
-mv $HOME/{74145f27-f039-47ce-a470-a662b129930a}.xpi $HOME/.librewolf/*.default-release/extensions/
-# user-agent switcher
-wget https://addons.mozilla.org/firefox/downloads/file/3952467/user_agent_string_switcher-0.4.8.xpi
-mv $HOME/user_agent_string_switcher-0.4.8.xpi $HOME/{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}.xpi
-mv $HOME/{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}.xpi $HOME/.librewolf/*.default-release/extensions/
-# duckduckgo
-wget https://addons.mozilla.org/firefox/downloads/file/3993826/duckduckgo_for_firefox-2022.8.25.xpi
-mv $HOME/duckduckgo_for_firefox-2022.8.25.xpi $HOME/jid1-ZAdIEUB7XOzOJw@jetpack.xpi
-mv $HOME/jid1-ZAdIEUB7XOzOJw@jetpack.xpi $HOME/.librewolf/*.default-release/extensions/
-# sponsor block
-wget https://addons.mozilla.org/firefox/downloads/file/4006940/sponsorblock-5.0.5.xpi
-mv $HOME/sponsorblock-5.0.5.xpi $HOME/sponsorBlocker@ajay.app.xpi
-mv $HOME/sponsorBlocker@ajay.app.xpi $HOME/.librewolf/*.default-release/extensions/
-# df youtube
-wget https://addons.mozilla.org/firefox/downloads/file/3449086/df_youtube-1.13.504.xpi
-mv $HOME/df_youtube-1.13.504.xpi $HOME/dfyoutube@example.com.xpi
-mv $HOME/dfyoutube@example.com.xpi $HOME/.librewolf/*.default-release/extensions/
-# return youtube dislikes
-wget https://addons.mozilla.org/firefox/downloads/file/4005382/return_youtube_dislikes-3.0.0.6.xpi
-mv $HOME/return_youtube_dislikes-3.0.0.6.xpi $HOME/{762f9885-5a13-4abd-9c77-433dcd38b8fd}.xpi
-mv $HOME/{762f9885-5a13-4abd-9c77-433dcd38b8fd}.xpi $HOME/.librewolf/*.default-release/extensions/
+# downloading addons
+addon 3902154 decentraleyes-2.0.17 jid1-BoFifL9Vbdl2zQ@jetpack # decentraleyes
+addon 3910598 canvasblocker-1.8 CanvasBlocker@kkapsner.de # canvasblocker
+addon 3980848 clearurls-1.25.0 {74145f27-f039-47ce-a470-a662b129930a} # clear urls
+addon 3993826 duckduckgo_for_firefox-2022.8.25 jid1-ZAdIEUB7XOzOJw@jetpack # duckduckgo
+addon 4006940 sponsorblock-5.0.5 sponsorBlocker@ajay.app # sponsor block
+addon 3449086 df_youtube-1.13.504 dfyoutube@example.com # df youtube
+addon 4005382 return_youtube_dislikes-3.0.0.6 {762f9885-5a13-4abd-9c77-433dcd38b8fd} # return youtube dislikes
+# setting up addons
+mvc extension-preferences.json $HOME/.librewolf/*.default-release/
 
-# remove script
-sudo rm -r ~/archSh-tmp
-rm archSh.sh
+# -------------- :( --------------
 
-# possibly starting main-pc.sh
+# remove script :/
+sudo rm -r $HOME/tmp-ifums
+sudo rm -r $HOME/dotfiles
+rm $HOME/ifums.sh
+
+# possibly starting main-pc.sh :/
 if [ "$main_pc" = "0" ]
 then
-        curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/main-pc.sh
+        curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/main-pc.sh
         sh $HOME/main-pc.sh
 fi
 
-# adding the need for a passwd
+# adding the need for a passwd :/
 sudo sed -i '$ d' /etc/sudoers
 
+# :(
 if [ "$poweroff_q" = "0" ]
 then
         systemctl poweroff
