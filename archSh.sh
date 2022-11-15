@@ -123,7 +123,7 @@ sudo pacman -S git base-devel imagemagick --needed --noconfirm
 # dotfiles
 git clone https://github.com/RyhoBtw/dotfiles
 # scripts and pictures
-git clone https://github.com/RyhoBtw/tmp-ifums
+git clone https://github.com/RyhoBtw/tmp-hola
 
 # :( pacman
 fsudo mvc pacman.conf /etc/
@@ -238,7 +238,7 @@ if [ $drivers = "nvidia" ]; then
 		rc_num=$(expr $rc_num + 1)
 		perl -i -slpe 'print $s if $. == $n; $. = 0 if eof' -- -n=$rc_num -s='awful.spawn.with_shell("gwe --hide-window")' $HOME/.config/awesome/rc.lua*
 		# Setting up script to run after next login
-		cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
+		cd /opt && sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/first-boot.sh
 		sudo chmod +x /opt/first-boot.sh
 		echo '' >> $HOME/.config/awesome/rc.lua
 		echo '-- First boot script' >> $HOME/.config/awesome/rc.lua
@@ -276,7 +276,7 @@ install sddm sddm-sugar-candy-git
 sudo systemctl enable sddm.service
 fsudo mvc sddm.conf /etc/sddm.conf.d/
 fsudo mvc theme.conf /usr/share/sddm/themes/sugar-candy/
-sudo cp $HOME/tmp-ifums/pictures/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
+sudo cp $HOME/tmp-hola/pictures/sddm-paper-plane.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/
 
 # theming grub
 fsudo mvc grub /etc/default/
@@ -371,9 +371,9 @@ mvc extension-preferences.json $HOME/.librewolf/*.default-release/
 # -------------- :( --------------
 
 # remove script :/
-sudo rm -r $HOME/tmp-ifums
+sudo rm -r $HOME/tmp-hola
 sudo rm -r $HOME/dotfiles
-rm $HOME/ifums.sh
+rm $HOME/archSh.sh
 
 # possibly starting main-pc.sh :/
 if [ "$main_pc" = "0" ]
