@@ -26,6 +26,7 @@ if [ "$testing" = "0" ]
 then
   res=2k
   drivers=amd
+fi
 
 # q-main-pc
 whiptail --yesno "Is this the main pc?" --title "Main PC?" --defaultno 10 40
@@ -200,7 +201,7 @@ sudo ln -sfT /bin/dash /bin/sh
 fsudo mvc bash-update.hook /usr/share/libalpm/hooks/
 
 # Installing zsh
-install zsh thefuck --zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-theme-powerlevel10k-git
+install zsh thefuck zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search zsh-theme-powerlevel10k-git
 mkdir -p $HOME/.cache/zsh
 mvc .zshenv $HOME
 mvc .zshrc $HOME/.config/zsh
@@ -248,7 +249,7 @@ fi
 
 # AMD setup
 if [ $drivers = "amd" ]; then
-       install vulkan-radeon lib32-vulkan-radeon lib32-mesa xf86-video-amdgpu  		
+       install vulkan-radeon lib32-vulkan-radeon lib32-mesa xf86-video-amdgpu libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau	
 fi
 
 # Setup for testing
@@ -365,7 +366,7 @@ addon 3449086 df_youtube-1.13.504 dfyoutube@example.com # df youtube
 addon 4005382 return_youtube_dislikes-3.0.0.6 {762f9885-5a13-4abd-9c77-433dcd38b8fd} # return youtube dislikes
 addon 4018008 bitwarden_password_manager-2022.10.1 {446900e4-71c2-419f-a6a7-df9c091e268b} # Bitwarden
 # setting up addons
-mvc extension preferences.json $HOME/.librewolf/*.default-release/
+mvc extension-preferences.json $HOME/.librewolf/*.default-release/
 
 # -------------- :( --------------
 
