@@ -24,9 +24,8 @@ clear
 
 if [ "$testing" = "0" ]
 then
-  res=1080p
-  drivers=nvidia
-fi
+  res=2k
+  drivers=amd
 
 # q-main-pc
 whiptail --yesno "Is this the main pc?" --title "Main PC?" --defaultno 10 40
