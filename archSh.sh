@@ -230,20 +230,21 @@ git clone https://github.com/Elv13/collision $HOME/.config/awesome/collision
 # ---drivers setup---
 # Nvidida setup
 if [ $drivers = "nvidia" ]; then
-        install nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
-	if [ "$testing" = "1" ]; then
-		install gwe
-		rc_num=$(grep -n polkit $HOME/.config/awesome/rc.lua | cut -d : -f1)
-		rc_num=$(expr $rc_num + 1)
-		perl -i -slpe 'print $s if $. == $n; $. = 0 if eof' -- -n=$rc_num -s='awful.spawn.with_shell("gwe --hide-window")' $HOME/.config/awesome/rc.lua*
-		# Setting up script to run after next login
-		cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
-		sudo chmod +x /opt/first-boot.sh
-		echo '' >> $HOME/.config/awesome/rc.lua
-		echo '-- First boot script' >> $HOME/.config/awesome/rc.lua
-		echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
-		cd $HOME
-	fi
+	 install vulkan-radeon lib32-vulkan-radeon lib32-mesa xf86-video-amdgpu
+#        install nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
+#	if [ "$testing" = "1" ]; then
+#		install gwe
+#		rc_num=$(grep -n polkit $HOME/.config/awesome/rc.lua | cut -d : -f1)
+#		rc_num=$(expr $rc_num + 1)
+#		perl -i -slpe 'print $s if $. == $n; $. = 0 if eof' -- -n=$rc_num -s='awful.spawn.with_shell("gwe --hide-window")' $HOME/.config/awesome/rc.lua*
+#		# Setting up script to run after next login
+#		cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
+#		sudo chmod +x /opt/first-boot.sh
+#		echo '' >> $HOME/.config/awesome/rc.lua
+#		echo '-- First boot script' >> $HOME/.config/awesome/rc.lua
+#		echo 'awful.spawn.with_shell("alacritty -e /opt/first-boot.sh")' >> /$HOME/.config/awesome/rc.lua
+#		cd $HOME
+#	fi
 fi
 
 # AMD setup
@@ -365,8 +366,7 @@ addon 3449086 df_youtube-1.13.504 dfyoutube@example.com # df youtube
 addon 4005382 return_youtube_dislikes-3.0.0.6 {762f9885-5a13-4abd-9c77-433dcd38b8fd} # return youtube dislikes
 addon 4018008 bitwarden_password_manager-2022.10.1 {446900e4-71c2-419f-a6a7-df9c091e268b} # Bitwarden
 # setting up addons
-mvc extension
-preferences.json $HOME/.librewolf/*.default-release/
+mvc extension preferences.json $HOME/.librewolf/*.default-release/
 
 # -------------- :( --------------
 
