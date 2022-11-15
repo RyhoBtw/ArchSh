@@ -1,4 +1,4 @@
-# Ifums
+# Hola
 
 ```
 curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/archSh.sh
