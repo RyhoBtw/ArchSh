@@ -238,7 +238,7 @@ if [ $drivers = "nvidia" ]; then
 #		rc_num=$(expr $rc_num + 1)
 #		perl -i -slpe 'print $s if $. == $n; $. = 0 if eof' -- -n=$rc_num -s='awful.spawn.with_shell("gwe --hide-window")' $HOME/.config/awesome/rc.lua*
 #		# Setting up script to run after next login
-#		cd /opt && sudo curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/first-boot.sh
+#		cd /opt && sudo curl -LO https://raw.githubusercontent.com/Prihler/ifums/main/first-boot.sh
 #		sudo chmod +x /opt/first-boot.sh
 #		echo '' >> $HOME/.config/awesome/rc.lua
 #		echo '-- First boot script' >> $HOME/.config/awesome/rc.lua
