@@ -35,8 +35,8 @@ clear
 
 if [ "$main_pc" = "0" ]
 then
-  res=1080p
-  drivers=nvidia
+  res=2k
+  drivers=amd
 fi
 
 # q-resolution
