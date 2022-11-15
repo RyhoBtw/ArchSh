@@ -247,7 +247,7 @@ if [ $drivers = "nvidia" ]; then
 	fi
 fi
 
-# AMD setup
+# AMD setup :( Maybe Open Surce?/überarbeiten
 if [ $drivers = "amd" ]; then
        install vulkan-radeon lib32-vulkan-radeon lib32-mesa xf86-video-amdgpu libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau	
 fi
