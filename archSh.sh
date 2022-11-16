@@ -328,7 +328,7 @@ mvc flameshot.ini $HOME/.config/flameshot
 #paru -R xterm xtermG i3 vim --noconfirm
 
 # Installing packages
-install libreoffice-fresh nemo signal-desktop polkit-gnome lf-bin exa htop tldr bat downgrade procs rsync man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip vscodium-bin ranger xterm stress lavat-git
+install libreoffice-fresh nemo signal-desktop polkit-gnome ntfs-3g lf-bin exa htop tldr bat downgrade procs rsync man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip vscodium-bin ranger xterm stress lavat-git
 
 # Setting up Neovim
 install neovim vim-commentary neovim-surround vim-visual-multi neovim-nerdtree vim-devicons # vim-nerdtree-syntax-highlight nvim-packer-git :{
