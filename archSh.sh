@@ -320,8 +320,8 @@ install flameshot
 mvc flameshot.ini $HOME/.config/flameshot
 
 # Setting up audio
-#install alsa-ucm-conf-git
-#install pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber carla pavucontrol
+install goxlr-utility
+install pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber carla pavucontrol
 #systemctl enable --user pipewire-pulse.service
 
 # removing unwanted packages :{
