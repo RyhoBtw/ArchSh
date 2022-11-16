@@ -321,6 +321,7 @@ mvc flameshot.ini $HOME/.config/flameshot
 
 # Setting up audio
 install goxlr-utility
+rustup default stable
 install pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire libpulse wireplumber carla pavucontrol
 #systemctl enable --user pipewire-pulse.service
 
