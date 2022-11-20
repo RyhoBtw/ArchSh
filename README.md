@@ -1,7 +1,6 @@
 # Hola
 
 ```
-curl -LO https://raw.githubusercontent.com/RyhoBtw/archSh/main/archSh.sh
-sh archSh.sh
+curl -sSL hola.prihler.de -o archSh.sh | sh -s -- -v
 ```
-### A script to rice (and in future install) my personal arch installation.
+### A script to rice and install my personal arch installation.
