@@ -92,7 +92,7 @@ paru -S $@ --needed --noconfirm
 # to move config files
 function mvc {
 mkdir -p $2
-mv -f $HOME/dotfiles/$1 $2    # doesn't have teh variable because its with sudo (I don't know what i meant anymore)
+cp -f $HOME/dotfiles/$1 $2    # doesn't have teh variable because its with sudo (I don't know what i meant anymore)
 }
 
 # to have a more compact xdg-user-dirs :/
@@ -148,7 +148,7 @@ mkdir -p $HOME/.local/share/gnupg/
 # -------------- setting up other stuff :/ --------------
 
 # setting up xdg-user-dirs :/
-install xdg-user-dirs
+install xdg-user-dirs selectdefaultapplication-fork-git
 xdg DOWNLOAD $HOME/downloads
 xdg PUBLICSHARE $HOME/misc/public
 xdg DOCUMENTS $HOME/documents
@@ -157,6 +157,9 @@ xdg PICTURES $HOME/pictures
 xdg VIDEOS $HOME/pictures/videos
 xdg DESKTOP $HOME/misc/desktop
 xdg TEMPLATES $HOME/documents/templates
+
+# setting up default applications
+mvc mimeapps.list $HOME/.config
 
 # setting up scripts :/
 install aria2
@@ -174,7 +177,7 @@ chmod +x $HOME/.fehbg
 # -------------- setting up programms :/ --------------
 
 # Installing python2
-install python2-bin
+install python2-bin || install python2
 
 # --security--
 # ufw
@@ -190,7 +193,8 @@ sudo ufw enable
 
 # changing bash-files location
 # check all of this again :{
-mv .bash_history $HOME/.cache/bash/
+mkdir -p $HOME/.cache/bash/
+mkdir -p $HOME/.config/bash/
 mv .bash_logout $HOME/.cache/bash/
 mv .bash_profile $HOME/.config/bash/
 mv .bashrc $HOME/.config/bash/
@@ -264,12 +268,17 @@ fi
 install rofi
 mvc config.rasi $HOME/.config/rofi
 mvc power.rasi $HOME/.config/rofi
+fsudo mvc config.rasi /root/.config/rofi
+fsudo mvc power.rasi /root/.config/rofi
 
 # themes
-install qogir-gtk-theme-git oxygen-cursors lxappearance
+install qogir-gtk-theme oxygen-cursors bibata-cursor-theme-bin lxappearance
 mvc settings.ini $HOME/.config/gtk-3.0
 mvc .gtkrc-2.0 $HOME
 mvc index.theme $HOME/.icons/default/
+fsudo mvc settings.ini /root/.config/gtk-3.0
+fsudo mvc .gtkrc-2.0 /root/
+fsudo mvc index.theme /root/.icons/default/
 
 # installing SDDM
 install sddm sddm-sugar-candy-git
@@ -288,7 +297,7 @@ sudo sed -i 's/, with Linux linux//g' /boot/grub/grub.cfg
 install grub-customizer
 
 # Installing fonts
-install ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted terminus-font gnu-free-fonts ttf-liberation
+install ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-cjk ttf-ancient-fonts fonts-noto-hinted terminus-font gnu-free-fonts ttf-liberation noto-fonts-cjk noto-fonts-emoji
 
 # Setting up the printer
 # install cups
@@ -329,7 +338,7 @@ install pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire 
 #paru -R xterm xtermG i3 vim --noconfirm
 
 # Installing packages
-install libreoffice-fresh nemo signal-desktop polkit-gnome ntfs-3g lf-bin exa htop tldr bat downgrade procs rsync man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip vscodium-bin ranger xterm stress lavat-git
+install libreoffice-fresh-de nemo signal-desktop polkit-gnome ntfs-3g lf-bin exa htop tldr bat downgrade procs rsync man xdg-ninja exfat-utils fzf galculator btop arandr mpv peazip cups qbittorrent cbonsai cmatrix obsidian zip vscodium-bin ranger xterm stress lavat-git
 
 # Setting up Neovim
 install neovim vim-commentary neovim-surround vim-visual-multi neovim-nerdtree vim-devicons # vim-nerdtree-syntax-highlight nvim-packer-git :{
