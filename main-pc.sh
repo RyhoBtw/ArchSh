@@ -5,7 +5,7 @@
 # Updating system
 paru -Syu --noconfirm
 
-paru -S etcher-bin gimp bitwarden spotify discord multimc-bin arduino jre-openjdk telegram-desktop-bin ckb-next nvtop noto-fonts-cjk noto-fonts-emoji --noconfirm
+paru -S etcher-bin gimp bitwarden spotify discord multimc-bin postman-bin arduino jre-openjdk telegram-desktop-bin ckb-next nvtop noto-fonts-cjk noto-fonts-emoji --noconfirm
 echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awesome/rc.lua
 
 #Keyboard daemon for Corsair
