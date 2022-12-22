@@ -139,6 +139,9 @@ paru -Syu --noconfirm || { git clone https://aur.archlinux.org/paru-bin.git ; cd
 cd $HOME
 paru -Syu --noconfirm
 
+#installig flatpak
+install xdg-desktop-portal-wlr
+
 # Installing extra firmware to get rid of the warnings when installing packages :/
 install mkinitcpio-firmware
 
