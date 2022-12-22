@@ -11,6 +11,9 @@ echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awe
 #Keyboard daemon for Corsair
 sudo systemctl enable ckb-next-daemon
 
+#Steam
+sudo pacman -S steam --noconfirm
+
 #Mouse DPI
 sudo touch /etc/modprobe.d/usbhid.conf
 echo 'options usbhid mousepoll=4' | sudo tee -a /etc/modprobe.d/usbhid.conf
