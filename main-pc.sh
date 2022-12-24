@@ -12,7 +12,7 @@ echo 'awful.spawn.with_shell("discord --start-minimized")' >> /$HOME/.config/awe
 sudo systemctl enable ckb-next-daemon
 
 #Flatpak installs
-flatpak install flathub com.discordapp.Discord
+#flatpak install flathub com.discordapp.Discord
 
 #Steam
 sudo pacman -S steam --noconfirm
