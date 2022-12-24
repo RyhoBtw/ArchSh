@@ -140,7 +140,7 @@ cd $HOME
 paru -Syu --noconfirm
 
 #installig flatpak
-pacman -S xdg-desktop-portal-wlr --noconfirm
+#pacman -S xdg-desktop-portal-wlr --noconfirm
 
 # Installing extra firmware to get rid of the warnings when installing packages :/
 install mkinitcpio-firmware
