@@ -180,7 +180,7 @@ chmod +x $HOME/.fehbg
 # -------------- setting up programms :/ --------------
 
 # Installing python2
-install python2-bin || install python2
+install python2-bin | install python2
 
 # --security--
 # ufw
