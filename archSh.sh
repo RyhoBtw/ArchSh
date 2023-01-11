@@ -136,7 +136,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 
 # installing paru
 # not working
-paru -Syu --noconfirm || { git clone https://aur.archlinux.org/paru-bin.git ; cd paru-bin ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru-bin ;} || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
+paru -Syu --noconfirm || { git clone https://aur.archlinux.org/paru.git ; cd paru ; makepkg -si --noconfirm ; sudo rm -r $HOME/paru ;}
 cd $HOME
 paru -Syu --noconfirm
 
