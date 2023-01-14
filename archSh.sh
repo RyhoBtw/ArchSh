@@ -16,7 +16,7 @@ sleep 1
 clear
 
 # -------------- asking stuff --------------
-
+(
 # q-testing
 whiptail --yesno "Is this testing?" --title "Testig?" --defaultno 10 40
 testing=$?
@@ -405,3 +405,4 @@ then
 else
         systemctl reboot
 fi
+) 2>&1 | tee -a file.log
