@@ -359,6 +359,10 @@ sudo rm -r $HOME/nsxiv
 install networkmanager
 sudo systemctl enable NetworkManager.service --now
 
+# mouse setup :/ (see this: https://bbs.archlinux.org/viewtopic.php?id=252600)
+install xorg-xinput
+xinput --set-prop 13 'libinput Accel Speed' -1
+
 # setting up ripgrep
 install ripgrep
 mkdir -p $HOME/.config/ripgrep
